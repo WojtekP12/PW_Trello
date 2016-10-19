@@ -55,7 +55,7 @@ public class MyUI extends UI {
         addButton.addStyleName("titleBarButtonStyle");
         titleBar.addComponent(addButton,24,0,24,0);
 
-        Button userButton = new Button("User Name");
+        Button userButton = new Button("WojtekP12");
         userButton.setWidth("100%");
         userButton.setIcon(FontAwesome.USER);
         userButton.addStyleName("titleBarButtonStyle");
