@@ -12968,37 +12968,35 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 }
 
-.mainContainerStyle{
-	background-color:#0079BF;
+.mytheme .mainContainerStyle {
+	background-color: #0079BF;
 }
 
-.titleBarStyle{
-	background-color:#0067A3;
+.mytheme .titleBarStyle {
+	background-color: #0067A3;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-.v-button-titleBarButtonStyle {
+.mytheme .v-button-titleBarButtonStyle {
 	background: #4C94BF !important;
 	color: white !important;
 	border-style: none !important;
 }
 
-.v-textfield-titleBarTextFieldStyle {
+.mytheme .v-textfield-titleBarTextFieldStyle {
 	text-align: center;
 	background-color: #4C94BF !important;
 	border-style: none !important;
 	color: white !important;
-
 }
 
-.titleBarLabelStyle{
+.mytheme .titleBarLabelStyle {
 	text-align: center;
 	color: white;
 	font-weight: bold;
 	font-size: x-large;
 	font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
 }
-
