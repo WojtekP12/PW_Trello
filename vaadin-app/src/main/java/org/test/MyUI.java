@@ -10,6 +10,8 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
+import javafx.scene.text.Font;
+import org.controls.*;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -23,57 +25,33 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        final VerticalLayout layout = new VerticalLayout();
-        layout.addStyleName("mainContainerStyle");
-        layout.setHeight("100%");
-        setContent(layout);
+        final MainContainer layout = new MainContainer();
+        setContent(layout.getContainer());
 
-        GridLayout titleBar = new GridLayout(30,1);
-        titleBar.setSpacing(true);
-        titleBar.setWidth("100%");
-        titleBar.addStyleName("titleBarStyle");
-        layout.addComponents(titleBar);
+        TitleBar titleBar = new TitleBar(1,30,"100%","titleBarStyle");
+        layout.addElement(titleBar.getTitleBar());
 
-        Button boardButton = new Button("Boards");
-        boardButton.setIcon(FontAwesome.BOOK);
-        boardButton.setWidth("100%");
-        boardButton.addStyleName("titleBarButtonStyle");
-        titleBar.addComponent(boardButton,0,0,1,0);
+        TitleBarButton boardButton = new TitleBarButton("Boards",FontAwesome.BOOK);
+        titleBar.addElement(boardButton.getButton(),0,0,0,1);
 
-        TextField searchArea = new TextField();
-        searchArea.setWidth("100%");
-        searchArea.setHeight("100%");
-        searchArea.addStyleName("titleBarTextFieldStyle");
-        titleBar.addComponent(searchArea,2,0,5,0);
+        TitleBarSearchField searchField = new TitleBarSearchField();
+        titleBar.addElement(searchField.getSerachField(),0,0,2,5);
 
-        Label title = new Label("TRELLO");
-        title.setWidth("100%");
-        title.addStyleName("titleBarLabelStyle");
-        titleBar.addComponent(title,6,0,23,0);
+        TitleBarTitleLabel titleLabel = new TitleBarTitleLabel("TRELLO");
+        titleBar.addElement(titleLabel.getTitleLabel(),0,0,6,23);
 
-        Button addButton = new Button();
-        addButton.setWidth("100%");
-        addButton.setIcon(FontAwesome.PLUS);
-        addButton.addStyleName("titleBarButtonStyle");
-        titleBar.addComponent(addButton,24,0,24,0);
+        TitleBarButton addButton = new TitleBarButton("",FontAwesome.PLUS);
+        titleBar.addElement(addButton.getButton(),0,0,24,24);
 
-        Button userButton = new Button("WojtekP12");
-        userButton.setWidth("100%");
-        userButton.setIcon(FontAwesome.USER);
-        userButton.addStyleName("titleBarButtonStyle");
-        titleBar.addComponent(userButton,25,0,27,0);
+        TitleBarButton userButton = new TitleBarButton("User",FontAwesome.USER);
+        titleBar.addElement(userButton.getButton(),0,0,25,27);
 
-        Button infoButton = new Button();
-        infoButton.setWidth("100%");
-        infoButton.setIcon(FontAwesome.INFO);
-        infoButton.addStyleName("titleBarButtonStyle");
-        titleBar.addComponent(infoButton,28,0,28,0);
+        TitleBarButton infoButton = new TitleBarButton("", FontAwesome.INFO);
+        titleBar.addElement(infoButton.getButton(),0,0,28,28);
 
-        Button notificationButton = new Button();
-        notificationButton.setWidth("100%");
-        notificationButton.setIcon(FontAwesome.BELL);
-        notificationButton.addStyleName("titleBarButtonStyle");
-        titleBar.addComponent(notificationButton,29,0,29,0);
+        TitleBarButton notificationButton = new TitleBarButton("",FontAwesome.BELL);
+        titleBar.addElement(notificationButton.getButton(),0,0,29,29);
+
 
         // *********listy*********
         HorizontalLayout tableLayout = new HorizontalLayout();
@@ -140,13 +118,13 @@ public class MyUI extends UI {
         table2.addItem(new Object[] {panel3}, 3);
         table2.setPageLength(table.size());
 
-        layout.addComponents(tableLayout);
-        layout.setMargin(true);
-        layout.setSpacing(true);
+        layout.addElement(tableLayout);
+//        layout.setMargin(true);
+//        layout.setSpacing(true);
 
-        layout.addStyleName("mainContainerStyle");
-        layout.setHeight("100%");
-        setContent(layout);
+//        layout.addStyleName("mainContainerStyle");
+//        layout.setHeight("100%");
+        setContent(layout.getContainer());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

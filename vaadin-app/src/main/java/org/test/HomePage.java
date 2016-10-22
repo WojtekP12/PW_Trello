@@ -28,11 +28,13 @@ public class HomePage extends UI{
         layout.addComponents(titleBar);
 
         Label titleLabel = new Label("TRELLO");
-        titleBar.addComponent(titleLabel);
+        titleLabel.setWidth("100%");
+        titleLabel.addStyleName("titleBarLabelStyle");
+        titleBar.addComponent(titleLabel,7,0,25,0);
         Button loginButton = new Button("Login");
-        titleBar.addComponent(loginButton);
+        titleBar.addComponent(loginButton,0,0,3,0);
         Button registerButton = new Button("Register");
-        titleBar.addComponent(registerButton);
+        titleBar.addComponent(registerButton,4,0,6,0);
     }
 
     @WebServlet(urlPatterns = "HomePage/*", name = "HomePageServlet", asyncSupported = true)
