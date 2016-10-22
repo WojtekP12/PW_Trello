@@ -9,10 +9,11 @@ import com.vaadin.ui.*;
 import javax.servlet.annotation.WebServlet;
 
 /**
- * Created by wojciech.pelka on 19.10.2016.
+ * Created by wojciech.pelka on 22.10.2016.
  */
 @Theme("mytheme")
-public class LoginPage extends UI {
+public class RegisterPage extends UI
+{
     @Override
     protected void init(VaadinRequest request)
     {
@@ -23,14 +24,19 @@ public class LoginPage extends UI {
 
         TextField loginField = new TextField("Login");
         layout.addComponent(loginField);
+        TextField email = new TextField("e-mail;");
+        layout.addComponent(email);
+        layout.addComponent(loginField);
         PasswordField passwordField = new PasswordField("Password");
         layout.addComponent(passwordField);
-        Button loginButton = new Button("Login");
+        PasswordField repeatPasswordField = new PasswordField("Repeat Password");
+        layout.addComponent(repeatPasswordField);
+        Button loginButton = new Button("Register");
         layout.addComponent(loginButton);
     }
 
-    @WebServlet(urlPatterns = "LoginPage/*", name = "LoginPageServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = LoginPage.class, productionMode = false)
-    public static class LoginPageServlet extends VaadinServlet {
+    @WebServlet(urlPatterns = "RegisterPage/*", name = "RegisterPageServlet", asyncSupported = true)
+    @VaadinServletConfiguration(ui = RegisterPage.class, productionMode = false)
+    public static class RegisterPageServlet extends VaadinServlet {
     }
 }
