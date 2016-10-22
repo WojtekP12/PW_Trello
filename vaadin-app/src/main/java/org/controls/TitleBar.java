@@ -10,12 +10,12 @@ public class TitleBar
 {
     private GridLayout titleBar;
 
-    public TitleBar(int numberOfRows,int numberOfColumns, String width, String style)
+    public TitleBar(int numberOfRows,int numberOfColumns)
     {
         titleBar = new GridLayout(numberOfColumns,numberOfRows);
         titleBar.setSpacing(true);
-        titleBar.setWidth(width);
-        titleBar.addStyleName(style);
+        titleBar.setWidth("100%");
+        titleBar.addStyleName("titleBarStyle");
     }
 
     public GridLayout getTitleBar()

@@ -28,7 +28,7 @@ public class MyUI extends UI {
         final MainContainer layout = new MainContainer();
         setContent(layout.getContainer());
 
-        TitleBar titleBar = new TitleBar(1,30,"100%","titleBarStyle");
+        TitleBar titleBar = new TitleBar(1,30);
         layout.addElement(titleBar.getTitleBar());
 
         TitleBarButton boardButton = new TitleBarButton("Boards",FontAwesome.BOOK);

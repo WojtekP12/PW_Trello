@@ -2,9 +2,15 @@ package org.test;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
+import javafx.scene.text.Font;
+import org.controls.MainContainer;
+import org.controls.TitleBar;
+import org.controls.TitleBarButton;
+import org.controls.TitleBarTitleLabel;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -16,25 +22,27 @@ public class HomePage extends UI{
     @Override
     protected void init(VaadinRequest request)
     {
-        final VerticalLayout layout = new VerticalLayout();
-        layout.addStyleName("mainContainerStyle");
-        layout.setHeight("100%");
-        setContent(layout);
+        final MainContainer layout = new MainContainer();
+        setContent(layout.getContainer());
 
-        GridLayout titleBar = new GridLayout(30,1);
-        titleBar.setSpacing(true);
-        titleBar.setWidth("100%");
-        titleBar.addStyleName("titleBarStyle");
-        layout.addComponents(titleBar);
+        TitleBar titleBar = new TitleBar(1,30);
+        layout.addElement(titleBar.getTitleBar());
 
-        Label titleLabel = new Label("TRELLO");
-        titleLabel.setWidth("100%");
-        titleLabel.addStyleName("titleBarLabelStyle");
-        titleBar.addComponent(titleLabel,7,0,25,0);
-        Button loginButton = new Button("Login");
-        titleBar.addComponent(loginButton,0,0,3,0);
-        Button registerButton = new Button("Register");
-        titleBar.addComponent(registerButton,4,0,6,0);
+        TitleBarButton loginButton = new TitleBarButton("Login", FontAwesome.SIGN_IN);
+        titleBar.addElement(loginButton.getButton(),0,0,0,3);
+
+        TitleBarButton registerButton = new TitleBarButton("Register",FontAwesome.USER);
+        titleBar.addElement(registerButton.getButton(),0,0,4,7);
+
+        TitleBarTitleLabel titleLabel = new TitleBarTitleLabel("TRELLO");
+        titleBar.addElement(titleLabel.getTitleLabel(),0,0,8,20);
+
+
+        Label welcome = new Label("WELCOME IN TRELLO");
+        welcome.addStyleName("titleBarLabelStyle");
+
+        layout.addElement(welcome);
+
     }
 
     @WebServlet(urlPatterns = "HomePage/*", name = "HomePageServlet", asyncSupported = true)
