@@ -6,6 +6,7 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
+import com.vaadin.ui.Button.ClickEvent;
 import javafx.scene.text.Font;
 import org.controls.MainContainer;
 import org.controls.TitleBar;
@@ -36,6 +37,8 @@ public class HomePage extends UI{
 
         TitleBarTitleLabel titleLabel = new TitleBarTitleLabel("TRELLO");
         titleBar.addElement(titleLabel.getTitleLabel(),0,0,8,20);
+		
+		addButtonClickListeners(loginButton.getButton(), registerButton.getButton());
 
 
         Label welcome = new Label("WELCOME IN TRELLO");
@@ -49,4 +52,24 @@ public class HomePage extends UI{
     @VaadinServletConfiguration(ui = HomePage.class, productionMode = false)
     public static class HomePageServlet extends VaadinServlet {
     }
+	
+	void addButtonClickListeners(Button login, Button register)
+	{
+		login.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				getUI().getPage().setLocation("/LoginPage");
+			}
+		});
+		
+		register.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				getUI().getPage().setLocation("/RegisterPage");
+			}
+		});
+	}
+	
 }
