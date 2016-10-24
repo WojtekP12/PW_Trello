@@ -4,6 +4,7 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
 import org.controls.MainContainer;
 
@@ -18,21 +19,56 @@ public class RegisterPage extends UI
     @Override
     protected void init(VaadinRequest request)
     {
-        final MainContainer layout = new MainContainer();
-        setContent(layout.getContainer());
+
+        Label registerLabel = new Label("Create account on TRELLO!");
+        registerLabel.addStyleName("loginPageLabelStyle");
 
         TextField loginField = new TextField("Login");
-        layout.addElement(loginField);
-        TextField email = new TextField("e-mail;");
-        layout.addElement(email);
-        layout.addElement(loginField);
-        PasswordField passwordField = new PasswordField("Password");
-        layout.addElement(passwordField);
-        PasswordField repeatPasswordField = new PasswordField("Repeat Password");
-        layout.addElement(repeatPasswordField);
-        Button loginButton = new Button("Register");
-        layout.addElement(loginButton);
+        loginField.addStyleName("cap");
+        loginField.addStyleName("loginPageTextFieldStyle");
+        loginField.setWidth("60%");
 
+        TextField email = new TextField("e-mail;");
+        email.addStyleName("cap");
+        email.addStyleName("loginPageTextFieldStyle");
+        email.setWidth("60%");
+
+        PasswordField passwordField = new PasswordField("Password");
+        passwordField.addStyleName("cap");
+        passwordField.addStyleName("loginPageTextFieldStyle");
+        passwordField.setWidth("60%");
+
+        PasswordField repeatPasswordField = new PasswordField("Repeat Password");
+        repeatPasswordField.addStyleName("cap");
+        repeatPasswordField.addStyleName("loginPageTextFieldStyle");
+        repeatPasswordField.setWidth("60%");
+
+        Button registerButton = new Button("Register");
+        registerButton.addStyleName("loginPageLoginButtonStyle");
+
+        Button loginButton = new Button("Log In");
+        loginButton.addStyleName("loginPageRegisterButtonStyle");
+
+        HorizontalLayout buttons = new HorizontalLayout(registerButton,loginButton);
+        buttons.addStyleName("loginPageButtonsContainerStyle");
+
+        
+        final VerticalLayout layout = new VerticalLayout(registerLabel,loginField,email,passwordField,repeatPasswordField,buttons);
+        layout.setSpacing(true);
+        layout.setMargin(new MarginInfo(true, true, true, false));
+        layout.setSizeUndefined();
+        layout.setComponentAlignment(registerLabel, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(loginField, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(email, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(passwordField, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(repeatPasswordField, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(buttons, Alignment.MIDDLE_CENTER);
+
+        MainContainer container = new MainContainer();
+        container.addElement(layout);
+        container.getContainer().addStyleName("loginPageTextStyle");
+        container.getContainer().setComponentAlignment(layout,Alignment.MIDDLE_CENTER);
+        setContent(container.getContainer());
 
     }
 

@@ -28,12 +28,12 @@ public class LoginPage extends UI {
         TextField loginField = new TextField("Login");
         loginField.addStyleName("cap");
         loginField.addStyleName("loginPageTextFieldStyle");
-        //loginField.setWidth(60,Unit.PERCENTAGE);
+        loginField.setWidth(60,Unit.PERCENTAGE);
 
         PasswordField passwordField = new PasswordField("Password");
         passwordField.addStyleName("cap");
         passwordField.addStyleName("loginPageTextFieldStyle");
-        //passwordField.setWidth(60,Unit.PERCENTAGE);
+        passwordField.setWidth(60,Unit.PERCENTAGE);
 
         Button loginButton = new Button("Log In");
         loginButton.addStyleName("loginPageLoginButtonStyle");
@@ -44,6 +44,7 @@ public class LoginPage extends UI {
         //registerButton.setWidth(50,Unit.PERCENTAGE);
 
         HorizontalLayout buttons = new HorizontalLayout(loginButton,registerButton);
+        buttons.addStyleName("loginPageButtonsContainerStyle");
         //buttons.setWidth(60,Unit.PERCENTAGE);
 
         final VerticalLayout layout = new VerticalLayout(loginLabel,loginField,passwordField,buttons);

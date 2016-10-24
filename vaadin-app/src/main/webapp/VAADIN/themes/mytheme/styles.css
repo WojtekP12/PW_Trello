@@ -13036,3 +13036,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-style: none !important;
 	margin-left: 15px;
 }
+
+.mytheme .loginPageButtonsContainerStyle {
+	margin-top: 20px;
+}
