@@ -58,15 +58,15 @@ public class MyUI extends UI {
         HorizontalLayout tableLayout = new HorizontalLayout();
         tableLayout.setSizeFull();
         tableLayout.setSpacing(true);
-        tableLayout.setMargin(true);
+        //tableLayout.setMargin(true);
         
 
-        Table table = new Table("Table");
+        Table table = new Table();
         table.setStyleName(Reindeer.LAYOUT_BLACK);
         table.setWidth(50,Unit.MM);
         table.setSelectable(true);
 
-        Table table2 = new Table("Table2");
+        Table table2 = new Table();
         table.setStyleName(Reindeer.LAYOUT_BLACK);
         table.setWidth(50,Unit.MM);
         table.setSelectable(true); 

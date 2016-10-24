@@ -13000,3 +13000,39 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: x-large;
 	font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
 }
+
+.mytheme .loginPageTextStyle {
+	background-color: white;
+}
+
+.mytheme .v-caption-cap .v-captiontext {
+	font-size: 24px;
+	font-weidht: bold;
+	color: black;
+}
+
+.mytheme .v-button-loginPageLoginButtonStyle {
+	background: green !important;
+	color: white !important;
+	border-style: none !important;
+}
+
+.mytheme .loginPageTextFieldStyle {
+	background-color: #FAFFBD;
+}
+
+.mytheme .loginPageLabelStyle {
+	margin-bottom: 80px;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 60px;
+	font-family: "Trebuchet S", geneva, helvetica, arial, tahoma, verdana, sans-serif;
+}
+
+.mytheme .v-button-loginPageRegisterButtonStyle {
+	background: darkred !important;
+	color: white !important;
+	border-style: none !important;
+	margin-left: 15px;
+}

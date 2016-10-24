@@ -2,9 +2,15 @@ package org.test;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
+import org.controls.MainContainer;
+import org.controls.TitleBar;
+import org.controls.TitleBarButton;
+import org.controls.TitleBarTitleLabel;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -16,17 +22,44 @@ public class LoginPage extends UI {
     @Override
     protected void init(VaadinRequest request)
     {
-        final VerticalLayout layout = new VerticalLayout();
-        layout.addStyleName("mainContainerStyle");
-        layout.setHeight("100%");
-        setContent(layout);
+        Label loginLabel = new Label("Log in to TRELLO!");
+        loginLabel.addStyleName("loginPageLabelStyle");
 
         TextField loginField = new TextField("Login");
-        layout.addComponent(loginField);
+        loginField.addStyleName("cap");
+        loginField.addStyleName("loginPageTextFieldStyle");
+        //loginField.setWidth(60,Unit.PERCENTAGE);
+
         PasswordField passwordField = new PasswordField("Password");
-        layout.addComponent(passwordField);
-        Button loginButton = new Button("Login");
-        layout.addComponent(loginButton);
+        passwordField.addStyleName("cap");
+        passwordField.addStyleName("loginPageTextFieldStyle");
+        //passwordField.setWidth(60,Unit.PERCENTAGE);
+
+        Button loginButton = new Button("Log In");
+        loginButton.addStyleName("loginPageLoginButtonStyle");
+        //loginButton.setWidth(50,Unit.PERCENTAGE);
+
+        Button registerButton = new Button("Register");
+        registerButton.addStyleName("loginPageRegisterButtonStyle");
+        //registerButton.setWidth(50,Unit.PERCENTAGE);
+
+        HorizontalLayout buttons = new HorizontalLayout(loginButton,registerButton);
+        //buttons.setWidth(60,Unit.PERCENTAGE);
+
+        final VerticalLayout layout = new VerticalLayout(loginLabel,loginField,passwordField,buttons);
+        layout.setSpacing(true);
+        layout.setMargin(new MarginInfo(true, true, true, false));
+        layout.setSizeUndefined();
+        layout.setComponentAlignment(loginLabel, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(loginField, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(passwordField, Alignment.MIDDLE_CENTER);
+        layout.setComponentAlignment(buttons, Alignment.MIDDLE_CENTER);
+
+        MainContainer container = new MainContainer();
+        container.addElement(layout);
+        container.getContainer().addStyleName("loginPageTextStyle");
+        container.getContainer().setComponentAlignment(layout,Alignment.MIDDLE_CENTER);
+        setContent(container.getContainer());
     }
 
     @WebServlet(urlPatterns = "LoginPage/*", name = "LoginPageServlet", asyncSupported = true)

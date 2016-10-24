@@ -21,10 +21,11 @@
   }
 
   .v-button-titleBarButtonStyle {
-    background: #4C94BF !important;
-    color: white !important;
-    border-style: none !important;
-  }
+     background: #4C94BF !important;
+     color: white !important;
+     border-style: none !important;
+
+   }
 
   .v-textfield-titleBarTextFieldStyle {
     text-align: center;
@@ -41,4 +42,42 @@
     font-size: x-large;
     font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
   }
+
+  .loginPageTextStyle {
+    background-color: white;
+  }
+
+  .v-caption-cap .v-captiontext {
+    font-size: 24px;
+    font-weidht: bold;
+    color:black;
+  }
+
+  .v-button-loginPageLoginButtonStyle {
+    background: green !important;
+    color: white !important;
+    border-style: none !important;
+
+  }
+
+  .loginPageTextFieldStyle{
+    background-color: #FAFFBD;
+  }
+
+  .v-button-loginPageRegisterButtonStyle {
+    background: darkred !important;
+    color: white !important;
+    border-style: none !important;
+
+  }
+
+  .loginPageLabelStyle{
+    margin-bottom: 80px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 60px;
+    font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
+  }
+
 }
