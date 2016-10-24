@@ -12,6 +12,7 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
 import javafx.scene.text.Font;
 import org.controls.*;
+import org.models.*;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -68,7 +69,19 @@ public class MyUI extends UI {
         Table table2 = new Table("Table2");
         table.setStyleName(Reindeer.LAYOUT_BLACK);
         table.setWidth(50,Unit.MM);
-        table.setSelectable(true);
+        table.setSelectable(true); 
+		
+		//*************************
+		Board.testBoard();
+		
+		Board board = Board.boardsList.get(0);
+		int n = board.size();
+		for(int i=0;i<n;i++)
+		{
+			Table t = loadList(board.get(i));
+			tableLayout.addComponent(t);
+		}
+		//**********************
 
         tableLayout.addComponent(table);
         tableLayout.addComponent(table2);
@@ -131,4 +144,51 @@ public class MyUI extends UI {
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }
+	
+	Table loadList(List list)
+	{
+		Table table = new Table();
+			table.setStyleName(Reindeer.LAYOUT_BLACK);
+			table.setWidth(50,Unit.MM);
+			table.setSelectable(true);
+			table.addContainerProperty(list.getName(), Panel.class, null);
+			
+		int n = list.size();
+		for(int i=0;i<n;i++)
+		{
+			Panel panel = loadCard(list.get(i));				
+			table.addItem(new Object[] {panel},  i);
+		}
+		
+		table.setPageLength(table.size());
+		
+		return table;
+	}
+	
+	Panel loadCard(Card card)
+	{
+		Panel panel = new Panel(card.getName());
+			panel.addStyleName(Reindeer.PANEL_LIGHT);
+			panel.setSizeFull();
+		
+		addCardClickListener(panel, card);
+		
+		return panel;
+	}
+	
+	void addCardClickListener(Panel panel, final Card card)
+	{
+		panel.addClickListener(new MouseEvents.ClickListener()
+		{
+			@Override
+			public void click(MouseEvents.ClickEvent clickEvent)
+			{
+				Notification.show(card.getName());
+				MySub sub = new MySub();
+				UI.getCurrent().addWindow(sub);
+			}
+		});
+	}
+	
+	
 }
