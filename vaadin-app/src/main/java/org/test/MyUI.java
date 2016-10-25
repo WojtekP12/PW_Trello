@@ -31,6 +31,7 @@ public class MyUI extends UI {
 
         TitleBar titleBar = new TitleBar(1,30);
         layout.addElement(titleBar.getTitleBar());
+        layout.getContainer().setExpandRatio(titleBar.getTitleBar(), 0.2f);
 
         TitleBarButton boardButton = new TitleBarButton("Boards",FontAwesome.BOOK);
         titleBar.addElement(boardButton.getButton(),0,0,0,1);
@@ -56,10 +57,9 @@ public class MyUI extends UI {
 
         // *********listy*********
         HorizontalLayout tableLayout = new HorizontalLayout();
-        tableLayout.setSizeFull();
+        tableLayout.setSizeUndefined();
         tableLayout.setSpacing(true);
         //tableLayout.setMargin(true);
-        
 
         Table table = new Table();
         table.setStyleName(Reindeer.LAYOUT_BLACK);
@@ -70,7 +70,8 @@ public class MyUI extends UI {
         table.setStyleName(Reindeer.LAYOUT_BLACK);
         table.setWidth(50,Unit.MM);
         table.setSelectable(true); 
-		
+
+
 		//*************************
 		Board.testBoard();
 		
@@ -80,6 +81,8 @@ public class MyUI extends UI {
 		{
 			Table t = loadList(board.get(i));
 			tableLayout.addComponent(t);
+          //  tableLayout.setComponentAlignment(t, Alignment.TOP_CENTER);
+            tableLayout.setExpandRatio(t, 1.0f);
 		}
 		//**********************
 
@@ -132,6 +135,7 @@ public class MyUI extends UI {
         table2.setPageLength(table.size());
 
         layout.addElement(tableLayout);
+        layout.getContainer().setExpandRatio(tableLayout,0.8f);
 //        layout.setMargin(true);
 //        layout.setSpacing(true);
 

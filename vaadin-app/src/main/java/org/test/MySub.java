@@ -6,7 +6,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 
 /**
- * Created by Adam on 2016-10-20.
+ * Created by Adam Redliński on 2016-10-20.
  */
 public class MySub extends Window {
     public MySub() {
@@ -15,11 +15,10 @@ public class MySub extends Window {
 
         // Some basic content for the window
         VerticalLayout content = new VerticalLayout();
-        content.addComponent(new Label(this.getCaption()));
+        content.addComponent(new Label("w liście "));
         content.setMargin(true);
         setContent(content);
 
-        // Disable the close button
         setClosable(true);
 
         // Trivial logic for closing the sub-window

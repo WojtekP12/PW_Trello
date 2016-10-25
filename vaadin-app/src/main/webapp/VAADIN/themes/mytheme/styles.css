@@ -13021,22 +13021,21 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: #FAFFBD;
 }
 
+.mytheme .v-button-loginPageRegisterButtonStyle {
+	background: darkred !important;
+	color: white !important;
+	border-style: none !important;
+}
+
 .mytheme .loginPageLabelStyle {
 	margin-bottom: 80px;
 	text-align: center;
 	color: black;
 	font-weight: bold;
 	font-size: 60px;
-	font-family: "Trebuchet S", geneva, helvetica, arial, tahoma, verdana, sans-serif;
-}
-
-.mytheme .v-button-loginPageRegisterButtonStyle {
-	background: darkred !important;
-	color: white !important;
-	border-style: none !important;
-	margin-left: 15px;
+	font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
 }
 
 .mytheme .loginPageButtonsContainerStyle {
-	margin-top: 20px;
+	margin-bottom: 20px;
 }

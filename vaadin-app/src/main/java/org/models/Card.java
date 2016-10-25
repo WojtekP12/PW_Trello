@@ -3,6 +3,7 @@ package org.models;
 public class Card 
 {
 	String name;
+	String description;
 	List parentList;
 	
 	public Card(String name)
@@ -24,4 +25,8 @@ public class Card
 	{
 		this.parentList = list;
 	}
+
+	public void setDescription(String description)	{this.description = description; }
+
+	public String getDescription() { return this.description; }
 }
