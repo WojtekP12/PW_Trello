@@ -4,13 +4,16 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
+import com.vaadin.ui.Button.ClickEvent;
 import org.controls.MainContainer;
 import org.controls.TitleBar;
 import org.controls.TitleBarButton;
 import org.controls.TitleBarTitleLabel;
+import org.models.*;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -22,6 +25,10 @@ public class LoginPage extends UI {
     @Override
     protected void init(VaadinRequest request)
     {
+		/*if(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")) != "null")
+			getUI().getPage().setLocation("/");*/
+		
+		
         Label loginLabel = new Label("Log in to TRELLO!");
         loginLabel.addStyleName("loginPageLabelStyle");
 
@@ -61,10 +68,54 @@ public class LoginPage extends UI {
         container.getContainer().addStyleName("loginPageTextStyle");
         container.getContainer().setComponentAlignment(layout,Alignment.MIDDLE_CENTER);
         setContent(container.getContainer());
+		
+		addButtonClickListeners(loginButton,registerButton,loginField,passwordField);
+		User.testUsers();
     }
 
     @WebServlet(urlPatterns = "LoginPage/*", name = "LoginPageServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = LoginPage.class, productionMode = false)
     public static class LoginPageServlet extends VaadinServlet {
     }
+	
+	void addButtonClickListeners(Button login, Button register, TextField user, PasswordField password)
+	{
+		login.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				User u = null;
+				
+				int n = User.users.size();
+				for(int i=0;i<n;i++)
+				{
+					if(User.users.get(i).username.equals(user.getValue()))
+						u = User.users.get(i);
+				}
+				
+				if (u==null)
+				{
+					Notification.show("User not found: "+user.getValue());
+				} else
+				{
+					if(password.getValue().equals(u.password))
+					{
+						VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", user.getValue());
+						getUI().getPage().setLocation("/");
+					} else
+					{
+						Notification.show("Wrong password!");
+					}
+				}
+			}
+		});
+		
+		register.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				getUI().getPage().setLocation("/RegisterPage");
+			}
+		});
+	}
 }

@@ -4,9 +4,12 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
 import org.controls.MainContainer;
+import com.vaadin.ui.Button.ClickEvent;
+import org.models.*;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -19,7 +22,10 @@ public class RegisterPage extends UI
     @Override
     protected void init(VaadinRequest request)
     {
-
+		/*if(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")) != "null")
+			getUI().getPage().setLocation("/");*/
+		
+		
         Label registerLabel = new Label("Create account on TRELLO!");
         registerLabel.addStyleName("loginPageLabelStyle");
 
@@ -69,11 +75,58 @@ public class RegisterPage extends UI
         container.getContainer().addStyleName("loginPageTextStyle");
         container.getContainer().setComponentAlignment(layout,Alignment.MIDDLE_CENTER);
         setContent(container.getContainer());
+		
+		// Button listeners
+		
+		loginButton.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				getUI().getPage().setLocation("/LoginPage");
+			}
+		});
+		
+		registerButton.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+			if(loginField.isEmpty() || email.isEmpty() || passwordField.isEmpty() || repeatPasswordField.isEmpty())
+			{
+				Notification.show("Some fields are empty.");
+			} else
+			{
+				if(passwordField.getValue().equals(repeatPasswordField.getValue()))
+				{
+					boolean userExists = false;
+					
+					int n = User.users.size();
+					for(int i=0;i<n;i++)
+					{
+						if(User.users.get(i).username.equals(loginField.getValue()))
+							userExists = true;
+					}
+					
+					if(!userExists)
+					{
+						User u = new User(loginField.getValue(), passwordField.getValue(), email.getValue());
+						User.users.add(u);
+						VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", u.username);
+						getUI().getPage().setLocation("/");
+					} else
+						Notification.show("User exists!");
+					
+				} else
+					Notification.show("Passwords do not match!");
+			}
+			}
+		});
 
-    }
+
+	}
 
     @WebServlet(urlPatterns = "RegisterPage/*", name = "RegisterPageServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = RegisterPage.class, productionMode = false)
     public static class RegisterPageServlet extends VaadinServlet {
     }
+
 }

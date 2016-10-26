@@ -13039,3 +13039,10 @@ div.v-layout.v-horizontal.v-widget {
 .mytheme .loginPageButtonsContainerStyle {
 	margin-bottom: 20px;
 }
+
+.mytheme .v-button-boardPageBoardButtonStyle {
+	background: #0067A3 !important;
+	color: white !important;
+	border-style: none !important;
+	font-size: x-large;
+}
