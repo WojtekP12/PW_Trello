@@ -59,7 +59,7 @@ public class MyUI extends UI {
         HorizontalLayout tableLayout = new HorizontalLayout();
         tableLayout.setSizeUndefined();
         tableLayout.setSpacing(true);
-        //tableLayout.setMargin(true);
+        tableLayout.setMargin(true);
 
         Table table = new Table();
         table.setStyleName(Reindeer.LAYOUT_BLACK);
@@ -136,11 +136,7 @@ public class MyUI extends UI {
 
         layout.addElement(tableLayout);
         layout.getContainer().setExpandRatio(tableLayout,0.8f);
-//        layout.setMargin(true);
-//        layout.setSpacing(true);
 
-//        layout.addStyleName("mainContainerStyle");
-//        layout.setHeight("100%");
         setContent(layout.getContainer());
     }
 
