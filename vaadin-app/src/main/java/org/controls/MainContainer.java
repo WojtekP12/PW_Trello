@@ -17,6 +17,13 @@ public class MainContainer
         layout.setHeight("100%");
     }
 
+    public MainContainer(String style)
+    {
+        layout = new VerticalLayout();
+        layout.addStyleName(style);
+        layout.setHeight("100%");
+    }
+
     public VerticalLayout getContainer()
     {
         return layout;
