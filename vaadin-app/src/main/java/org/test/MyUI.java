@@ -7,7 +7,9 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.event.MouseEvents;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
 import javafx.scene.text.Font;
@@ -26,6 +28,11 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+		String username = String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"));
+		
+		/*if(username == "null")
+			getUI().getPage().setLocation("/HomePage");*/
+				
         final MainContainer layout = new MainContainer();
         setContent(layout.getContainer());
 
@@ -45,8 +52,16 @@ public class MyUI extends UI {
         TitleBarButton addButton = new TitleBarButton("",FontAwesome.PLUS);
         titleBar.addElement(addButton.getButton(),0,0,24,24);
 
-        TitleBarButton userButton = new TitleBarButton("User",FontAwesome.USER);
+        TitleBarButton userButton = new TitleBarButton(username,FontAwesome.USER);
         titleBar.addElement(userButton.getButton(),0,0,25,27);
+		userButton.getButton().addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", null);
+				getUI().getPage().setLocation("/LoginPage");
+			}
+		});
 
         TitleBarButton infoButton = new TitleBarButton("", FontAwesome.INFO);
         titleBar.addElement(infoButton.getButton(),0,0,28,28);
@@ -59,7 +74,7 @@ public class MyUI extends UI {
         HorizontalLayout tableLayout = new HorizontalLayout();
         tableLayout.setSizeUndefined();
         tableLayout.setSpacing(true);
-        //tableLayout.setMargin(true);
+        tableLayout.setMargin(true);
 
         Table table = new Table();
         table.setStyleName(Reindeer.LAYOUT_BLACK);
@@ -136,11 +151,7 @@ public class MyUI extends UI {
 
         layout.addElement(tableLayout);
         layout.getContainer().setExpandRatio(tableLayout,0.8f);
-//        layout.setMargin(true);
-//        layout.setSpacing(true);
 
-//        layout.addStyleName("mainContainerStyle");
-//        layout.setHeight("100%");
         setContent(layout.getContainer());
     }
 
