@@ -12972,6 +12972,10 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: #0079BF;
 }
 
+.mytheme .boardsPageMainContainerStyle {
+	background-color: white;
+}
+
 .mytheme .titleBarStyle {
 	background-color: #0067A3;
 	padding-left: 10px;
@@ -13045,4 +13049,11 @@ div.v-layout.v-horizontal.v-widget {
 	color: white !important;
 	border-style: none !important;
 	font-size: x-large;
+}
+
+.mytheme .boardPageBoardLabelStyle {
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
 }

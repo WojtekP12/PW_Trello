@@ -84,9 +84,9 @@
     font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
   }
 
-    .loginPageButtonsContainerStyle {
-      margin-bottom: 20px;
-    }
+  .loginPageButtonsContainerStyle {
+    margin-bottom: 20px;
+  }
 
   .v-button-boardPageBoardButtonStyle {
     background: #0067A3 !important;
@@ -95,4 +95,10 @@
     font-size: x-large;
   }
 
+  .boardPageBoardLabelStyle {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
+  }
 }

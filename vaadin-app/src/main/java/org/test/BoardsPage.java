@@ -26,7 +26,7 @@ public class BoardsPage extends UI
 
         TitleBar titleBar = new TitleBar(1,30);
         layout.addElement(titleBar.getTitleBar());
-        layout.getContainer().setExpandRatio(titleBar.getTitleBar(), 0.2f);
+        layout.getContainer().setExpandRatio(titleBar.getTitleBar(), 0.1f);
 
         TitleBarButton boardButton = new TitleBarButton("Boards", FontAwesome.BOOK);
         titleBar.addElement(boardButton.getButton(),0,0,0,1);
@@ -49,21 +49,17 @@ public class BoardsPage extends UI
         TitleBarButton notificationButton = new TitleBarButton("",FontAwesome.BELL);
         titleBar.addElement(notificationButton.getButton(),0,0,29,29);
 
+        BoardControl board1 = new BoardControl("Board1");
+        BoardControl board2 = new BoardControl("Board2");
+        BoardControl board3 = new BoardControl("Board3");
 
-        Label label = new Label("Personal label");
-        label.setIcon(FontAwesome.BOOK);
+        HorizontalLayout boardList = new HorizontalLayout(board1.getBoard(), board2.getBoard(), board3.getBoard());
+        boardList.setSpacing(true);
+        VerticalLayout childLayout = new VerticalLayout(boardList);
+        childLayout.setComponentAlignment(boardList,Alignment.MIDDLE_CENTER);
 
-        Button board = new Button("Board");
-        board.addStyleName("boardPageBoardButtonStyle");
-        board.setWidth(300,Unit.PIXELS);
-        board.setHeight(150,Unit.PIXELS);
-
-        HorizontalLayout boards = new HorizontalLayout(board);
-        boards.setSizeUndefined();
-        VerticalLayout childLayout = new VerticalLayout(boards);
-        childLayout.setComponentAlignment(boards,Alignment.MIDDLE_CENTER);
         layout.addElement(childLayout);
-        layout.getContainer().setComponentAlignment(childLayout, Alignment.MIDDLE_CENTER);
+        layout.getContainer().setExpandRatio(childLayout,0.8f);
 
     }
 
