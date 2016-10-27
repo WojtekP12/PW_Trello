@@ -76,18 +76,6 @@ public class MyUI extends UI {
         tableLayout.setSpacing(true);
         tableLayout.setMargin(true);
 
-        Table table = new Table();
-        table.setStyleName(Reindeer.LAYOUT_BLACK);
-        table.setWidth(50,Unit.MM);
-        table.setSelectable(true);
-
-        Table table2 = new Table();
-        table.setStyleName(Reindeer.LAYOUT_BLACK);
-        table.setWidth(50,Unit.MM);
-        table.setSelectable(true); 
-
-
-		//*************************
 		Board.testBoard();
 		
 		Board board = Board.boardsList.get(0);
@@ -99,14 +87,9 @@ public class MyUI extends UI {
           //  tableLayout.setComponentAlignment(t, Alignment.TOP_CENTER);
             tableLayout.setExpandRatio(t, 1.0f);
 		}
-		//**********************
 
-        tableLayout.addComponent(table);
-        tableLayout.addComponent(table2);
 
-// Define two columns for the built-in container
-        table.addContainerProperty("Name", Panel.class, null);
-        table2.addContainerProperty("Name2",Panel.class, null);
+
 
         Panel panel = new Panel("Card");
         panel.addStyleName(Reindeer.PANEL_LIGHT);
@@ -120,34 +103,6 @@ public class MyUI extends UI {
                 UI.getCurrent().addWindow(sub);
             }
         });
-
-       Panel panel2 = new Panel("Card2");
-        panel2.addStyleName(Reindeer.PANEL_LIGHT);
-        panel2.setSizeFull();
-        panel2.addClickListener((MouseEvents.ClickListener) clickEvent -> {
-            MySub sub = new MySub();
-
-            // Add it to the root component
-            UI.getCurrent().addWindow(sub);
-        });
-
-         Panel panel3 = new Panel("Card3");
-        panel3.addStyleName(Reindeer.PANEL_LIGHT);
-        panel3.setSizeFull();
-        panel3.setContent(new Label("pt, 3 paź 2016"));
-        panel3.addClickListener((MouseEvents.ClickListener) clickEvent -> {
-            MySub sub = new MySub();
-
-            // Add it to the root component
-            UI.getCurrent().addWindow(sub);
-        });
-
-        table.addItem(new Object[] {panel},  1);
-        table.addItem(new Object[] {panel2},  2);
-        table.setPageLength(table.size());
-
-        table2.addItem(new Object[] {panel3}, 3);
-        table2.setPageLength(table.size());
 
         layout.addElement(tableLayout);
         layout.getContainer().setExpandRatio(tableLayout,0.8f);
