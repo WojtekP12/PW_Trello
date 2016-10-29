@@ -25,15 +25,15 @@ import org.models.*;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
+	
+	private Board board;
+	private String username;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-		String username = String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"));
+        loadUsernameAndBoard();
 		
-		/*if(username == "null")
-			getUI().getPage().setLocation("/HomePage");*/
-				
-        final MainContainer layout = new MainContainer();
+		final MainContainer layout = new MainContainer();
         setContent(layout.getContainer());
 
         TitleBar titleBar = new TitleBar(1,30);
@@ -42,6 +42,13 @@ public class MyUI extends UI {
 
         TitleBarButton boardButton = new TitleBarButton("Boards",FontAwesome.BOOK);
         titleBar.addElement(boardButton.getButton(),0,0,0,1);
+		boardButton.getButton().addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				getUI().getPage().setLocation("/BoardsPage");
+			}
+		});
 
         TitleBarSearchField searchField = new TitleBarSearchField();
         titleBar.addElement(searchField.getSerachField(),0,0,2,5);
@@ -75,10 +82,7 @@ public class MyUI extends UI {
         tableLayout.setSizeUndefined();
         tableLayout.setSpacing(true);
         tableLayout.setMargin(true);
-
-		Board.testBoard();
 		
-		Board board = Board.boardsList.get(0);
 		int n = board.size();
 		for(int i=0;i<n;i++)
 		{
@@ -88,10 +92,7 @@ public class MyUI extends UI {
             tableLayout.setExpandRatio(t, 1.0f);
 		}
 
-
-
-
-        Panel panel = new Panel("Card");
+      /*  Panel panel = new Panel("Card");
         panel.addStyleName(Reindeer.PANEL_LIGHT);
         panel.setSizeFull();
         panel.addClickListener(new MouseEvents.ClickListener() {
@@ -102,7 +103,7 @@ public class MyUI extends UI {
                 // Add it to the root component
                 UI.getCurrent().addWindow(sub);
             }
-        });
+        });*/
 
         layout.addElement(tableLayout);
         layout.getContainer().setExpandRatio(tableLayout,0.8f);
@@ -160,5 +161,34 @@ public class MyUI extends UI {
 		});
 	}
 	
+	void loadUsernameAndBoard()
+	{
+		username = String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"));
+		/*if(username == "null")
+			getUI().getPage().setLocation("/HomePage");*/
+		
+		Board.testBoard();
+		try
+		{
+			board = Board.boardsList.get(0);
+			int id = Integer.valueOf(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("board")));
+			
+			int n = Board.boardsList.size();
+			for(int i=0;i<n;i++)
+			{
+				if(Board.boardsList.get(i).id==id)
+				{
+					board = Board.boardsList.get(i);
+					break;
+				}
+			}
+		}
+		 catch (Exception e)
+		{
+			getUI().getPage().setLocation("/BoardsPage");
+		}
+		
+		
+	}
 	
 }

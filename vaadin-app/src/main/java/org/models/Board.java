@@ -6,12 +6,17 @@ import java.util.ArrayList;
 public class Board
 {
 	public static ArrayList<Board> boardsList;
+	static int cID=0;
+	
+	public int id;
 	public String name;
 	public ArrayList<List> lists = new ArrayList<List>();
 	
 	public Board(String name)
 	{
 		this.name = name;
+		this.id = cID;
+		cID++;
 	}
 	
 	public void addList(List list)

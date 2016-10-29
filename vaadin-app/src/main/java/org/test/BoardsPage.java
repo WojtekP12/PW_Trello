@@ -12,6 +12,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
 import org.controls.*;
+import org.models.*;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -48,12 +49,18 @@ public class BoardsPage extends UI
 
         TitleBarButton notificationButton = new TitleBarButton("",FontAwesome.BELL);
         titleBar.addElement(notificationButton.getButton(),0,0,29,29);
-
-        BoardControl board1 = new BoardControl("Board1");
-        BoardControl board2 = new BoardControl("Board2");
-        BoardControl board3 = new BoardControl("Board3");
-
-        HorizontalLayout boardList = new HorizontalLayout(board1.getBoard(), board2.getBoard(), board3.getBoard());
+		
+		Board.testBoard();
+		
+		HorizontalLayout boardList = new HorizontalLayout();
+		
+		int n = Board.boardsList.size();
+		for(int i=0;i<n;i++)
+		{
+			BoardControl board = new BoardControl(Board.boardsList.get(i));
+			boardList.addComponent(board.getBoard());
+		}
+                
         boardList.setSpacing(true);
         VerticalLayout childLayout = new VerticalLayout(boardList);
         childLayout.setComponentAlignment(boardList,Alignment.MIDDLE_CENTER);
