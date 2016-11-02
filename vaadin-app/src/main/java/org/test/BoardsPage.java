@@ -39,6 +39,7 @@ public class BoardsPage extends UI
         titleBar.addElement(titleLabel.getTitleLabel(),0,0,6,23);
 
         TitleBarButton addButton = new TitleBarButton("",FontAwesome.PLUS);
+
         titleBar.addElement(addButton.getButton(),0,0,24,24);
 
         TitleBarButton userButton = new TitleBarButton("User",FontAwesome.USER);
@@ -60,6 +61,25 @@ public class BoardsPage extends UI
 			BoardControl board = new BoardControl(Board.boardsList.get(i));
 			boardList.addComponent(board.getBoard());
 		}
+
+        addButton.getButton().addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                AddPopup popup = new AddPopup();
+                UI.getCurrent().addWindow(popup);
+
+                popup.getAddButton().addClickListener(new Button.ClickListener() {
+                    @Override
+                    public void buttonClick(Button.ClickEvent event) {
+                        Board b = new Board(popup.getName().getValue());
+                        BoardControl board = new BoardControl(b);
+                        boardList.addComponent(board.getBoard());
+                        popup.close();
+                    }
+                });
+
+            }
+        });
                 
         boardList.setSpacing(true);
         VerticalLayout childLayout = new VerticalLayout(boardList);
