@@ -3,7 +3,12 @@ package org.test;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.shared.ui.label.ContentMode;
+import com.vaadin.server.VaadinService;
 import org.models.Card;
+import org.models.User;
+import org.models.Comment;
 
 import static com.vaadin.server.FontAwesome.BOLD;
 
@@ -13,9 +18,14 @@ import static com.vaadin.server.FontAwesome.BOLD;
 public class MySub extends Window {
     private Card card;
     private GridLayout container;
+	
+	private RichTextArea commentArea;
+	private Button sendComment;
+	private Panel activityPanel;
 
-    public MySub() {
-        super("ok"); // Set window caption
+    public MySub(Card card) {
+        super(card.getName()); // Set window caption
+		setCard(card);
         center();
 
         HorizontalLayout subWindowContainer = new HorizontalLayout();
@@ -35,12 +45,12 @@ public class MySub extends Window {
         Label addCommentLabel = new Label("Dodaj komentarz");
         content.addComponent(addCommentLabel,1,4);
 
-        RichTextArea commentArea = new RichTextArea();
+        commentArea = new RichTextArea();
         commentArea.setHeight(60f,Unit.MM);
         content.addComponent(commentArea,1,5,9,5);
 
-        Button sendComment = new Button("Wyślij");
-        sendComment.setDisableOnClick(true);
+        sendComment = new Button("Wyślij");
+        //sendComment.setDisableOnClick(true);
         content.addComponent(sendComment,1,6);
 
         Label activityLabel = new Label("Aktywność");
@@ -50,9 +60,10 @@ public class MySub extends Window {
         detailsButton.setStyleName(Reindeer.BUTTON_LINK);
         content.addComponent(detailsButton,9,7);
 
-        Panel activityPanel = new Panel();
+        activityPanel = new Panel();
         activityPanel.setHeight(100f, Unit.MM);
         content.addComponent(activityPanel,1,8,9,8);
+		loadComments();
 
         content.setMargin(true);
 
@@ -99,7 +110,8 @@ public class MySub extends Window {
         subWindowContainer.addComponents(content, rightMenu);
         setContent(subWindowContainer);
         setClosable(true);
-
+		
+		addCommentButtonListener();
     }
 
     public void init(Card card)
@@ -114,4 +126,69 @@ public class MySub extends Window {
     public void setContainer(GridLayout container) {this.container = container; }
 
     public GridLayout getContainer() {return this.container; }
+	
+	void addCommentButtonListener()
+	{
+		sendComment.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				String commentValue = commentArea.getValue();
+				commentArea.clear();
+				
+				User user = User.findUser(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")));
+				
+				Comment comment = new Comment(user, commentValue);
+				comment.setCard(card);
+				
+				loadComments();
+			}
+		});
+	}
+	
+	void loadComments()
+	{
+		VerticalLayout mainCommentLayout = new VerticalLayout();
+			mainCommentLayout.setSpacing(true);
+		
+		int n=card.getCommentsSize();
+		for(int i=0;i<n;i++)
+		{
+			Comment comment = card.getComment(i);
+			
+			VerticalLayout commentLayout = new VerticalLayout();
+				//commentLayout.setMargin(true);
+			
+				Label username = new Label("<b>" + comment.getAuthor().username + "</b> [ " 
+				+ comment.getTime().toString() + " ]",ContentMode.HTML);
+				commentLayout.addComponent(username);
+				
+				Label commentLabel = new Label(comment.getValue(),ContentMode.HTML);
+				commentLayout.addComponent(commentLabel);
+				
+				if(comment.getAuthor() == User.findUser(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"))))
+				{
+					Button deleteButton = new Button("Delete");
+					commentLayout.addComponent(deleteButton);
+					addDeleteButtonClickListener(deleteButton, comment);
+				}
+			
+			mainCommentLayout.addComponent(commentLayout);
+		}
+		
+		activityPanel.setContent(mainCommentLayout);
+		activityPanel.setScrollTop(Integer.MAX_VALUE);
+	}
+	
+	void addDeleteButtonClickListener(Button button, final Comment comment)
+	{
+		button.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				comment.remove();
+				loadComments();
+			}
+		});
+	}
 }

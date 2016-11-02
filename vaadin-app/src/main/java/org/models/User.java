@@ -37,6 +37,18 @@ public class User
 			users.add(new User("user6", "12345"));	
 		}
 	}
+	
+	public static User findUser(String username)
+	{
+		int n = User.users.size();
+		for(int i=0;i<n;i++)
+		{
+			if(User.users.get(i).username.equals(username))
+				return User.users.get(i);
+		}
+		
+		return null;
+	}
 
 }
 

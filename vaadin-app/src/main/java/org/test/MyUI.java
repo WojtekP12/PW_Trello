@@ -155,7 +155,7 @@ public class MyUI extends UI {
 			public void click(MouseEvents.ClickEvent clickEvent)
 			{
 				Notification.show(card.getName());
-				MySub sub = new MySub();
+				MySub sub = new MySub(card);
 				UI.getCurrent().addWindow(sub);
 			}
 		});
