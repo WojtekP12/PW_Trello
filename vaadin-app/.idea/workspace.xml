@@ -2,58 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8bf403b-bcde-4f91-8ffe-70a8813b3601" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/controls/BoardControl.class" afterPath="$PROJECT_DIR$/target/classes/org/controls/BoardControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/models/Board.class" afterPath="$PROJECT_DIR$/target/classes/org/models/Board.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/BoardsPage$BoardsPageServlet.class" afterPath="$PROJECT_DIR$/target/classes/org/test/BoardsPage$BoardsPageServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/BoardsPage.class" afterPath="$PROJECT_DIR$/target/classes/org/test/BoardsPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/LoginPage$LoginPageServlet.class" afterPath="$PROJECT_DIR$/target/classes/org/test/LoginPage$LoginPageServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/LoginPage.class" afterPath="$PROJECT_DIR$/target/classes/org/test/LoginPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$2.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$3.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$MyUIServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/RegisterPage$RegisterPageServlet.class" afterPath="$PROJECT_DIR$/target/classes/org/test/RegisterPage$RegisterPageServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/RegisterPage.class" afterPath="$PROJECT_DIR$/target/classes/org/test/RegisterPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/models/List.java" afterPath="$PROJECT_DIR$/src/main/java/org/models/List.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/AddPopup.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/AddPopup.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css" afterPath="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/CurrencyList_.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/CurrencyList_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/constants/NumberConstantsImpl_.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/constants/NumberConstantsImpl_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/impl/LocaleInfoImpl_.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/impl/LocaleInfoImpl_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/impl/LocaleInfoImpl_shared.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/i18n/client/impl/LocaleInfoImpl_shared.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/lang/AppWidgetset__EntryMethodHolder.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/lang/AppWidgetset__EntryMethodHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/DocumentModeAsserter_DocumentModeProperty.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/DocumentModeAsserter_DocumentModeProperty.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/impl/WindowImplIE_Resources_default_InlineClientBundleGenerator.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/impl/WindowImplIE_Resources_default_InlineClientBundleGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/FormPanel_IFrameTemplateImpl.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/FormPanel_IFrameTemplateImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/MenuBar_Resources_default_InlineClientBundleGenerator.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/MenuBar_Resources_default_InlineClientBundleGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/impl/ClippedImageImpl_DraggableTemplateImpl.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/impl/ClippedImageImpl_DraggableTemplateImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/impl/ClippedImageImpl_TemplateImpl.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/user/client/ui/impl/ClippedImageImpl_TemplateImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplGecko1_8.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplGecko1_8.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplIe10.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplIe10.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplIe8.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplIe8.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplIe9.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplIe9.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplSafari.java" afterPath="$PROJECT_DIR$/target/.generated/com/google/gwt/useragent/client/UserAgentImplSafari.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/vaadin/client/debug/internal/theme/DebugWindowStyles_default_InlineClientBundleGenerator.java" afterPath="$PROJECT_DIR$/target/.generated/com/vaadin/client/debug/internal/theme/DebugWindowStyles_default_InlineClientBundleGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/vaadin/client/metadata/ConnectorBundleLoaderImpl.java" afterPath="$PROJECT_DIR$/target/.generated/com/vaadin/client/metadata/ConnectorBundleLoaderImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/vaadin/client/ui/dd/VAcceptCriterionFactoryImpl.java" afterPath="$PROJECT_DIR$/target/.generated/com/vaadin/client/ui/dd/VAcceptCriterionFactoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/vaadin/client/ui/richtextarea/VRichTextToolbar_Images_default_InlineClientBundleGenerator.java" afterPath="$PROJECT_DIR$/target/.generated/com/vaadin/client/ui/richtextarea/VRichTextToolbar_Images_default_InlineClientBundleGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/.generated/com/vaadin/client/ui/richtextarea/VRichTextToolbar_Strings_.java" afterPath="$PROJECT_DIR$/target/.generated/com/vaadin/client/ui/richtextarea/VRichTextToolbar_Strings_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/9EEF782B9E2E1F059AC838A707ACE8D8.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/9EEF782B9E2E1F059AC838A707ACE8D8.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/AppWidgetset.devmode.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/AppWidgetset.devmode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/AppWidgetset.nocache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/AppWidgetset.nocache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/C81F8CA7CA7012F31BDE883DF6C99E61.cache.svg" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/C81F8CA7CA7012F31BDE883DF6C99E61.cache.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/compilation-mappings.txt" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/compilation-mappings.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/1.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/1.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/2.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/2.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/3.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/3.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/4.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/4.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/5.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/5.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/6.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/6.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/7.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/7.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/8.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/8.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/9.cache.js" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/AppWidgetset/deferredjs/9EEF782B9E2E1F059AC838A707ACE8D8/9.cache.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/WEB-INF/deploy/AppWidgetset/rpcPolicyManifest/manifest.txt" afterPath="$PROJECT_DIR$/target/classes/VAADIN/widgetsets/WEB-INF/deploy/AppWidgetset/rpcPolicyManifest/manifest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" />
     </list>
     <ignored path="vaadin-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,26 +36,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="158" column="47" selection-start-line="157" selection-start-column="16" selection-end-line="158" selection-end-column="47" />
+            <state relative-caret-position="513">
+              <caret line="160" column="24" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddPopup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/test/AddPopup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
-                <element signature="e#897#898#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +49,8 @@
       <file leaf-file-name="BoardsPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="75" column="65" selection-start-line="75" selection-start-column="65" selection-end-line="75" selection-end-column="65" />
+            <state relative-caret-position="279">
+              <caret line="67" column="56" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,10 +58,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddPopup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/test/AddPopup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+                <element signature="e#901#902#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="List.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/models/List.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/models/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
+            <state relative-caret-position="387">
               <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
               <folding>
                 <element signature="e#219#225#0" expanded="true" />
@@ -131,21 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoardControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/controls/BoardControl.java">
+      <file leaf-file-name="Card.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/models/Card.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySub.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1662">
-              <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+            <state relative-caret-position="434">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,14 +139,15 @@
         <option value="$PROJECT_DIR$/src/main/java/org/controls/TitleBar.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/models/Card.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/MySub.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/BoardsClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/controls/MainContainer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css" />
         <option value="$PROJECT_DIR$/src/main/java/org/controls/BoardControl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.scss" />
+        <option value="$PROJECT_DIR$/src/main/java/org/models/List.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/AddPopup.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" />
       </list>
     </option>
   </component>
@@ -210,10 +168,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1934" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -309,6 +266,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -917,15 +878,15 @@
       <workItem from="1477553895527" duration="5012000" />
       <workItem from="1477577995283" duration="615000" />
       <workItem from="1478099889178" duration="2411000" />
-      <workItem from="1478113505229" duration="4158000" />
+      <workItem from="1478113505229" duration="11499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67338000" />
+    <option name="totallyTimeSpent" value="74679000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1934" height="1048" extended-state="1" />
+    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -936,12 +897,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37372592" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18912797" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19129439" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2629032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26318622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -961,12 +922,12 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37372592" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -975,12 +936,12 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19129439" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37372592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19635193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26318622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1041,14 +1002,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -1061,9 +1014,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,9 +1052,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,9 +1090,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,9 +1120,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,28 +1223,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/models/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1353,28 +1280,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/RegisterPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287012">
           <caret line="13046" column="36" selection-start-line="13046" selection-start-column="36" selection-end-line="13046" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/models/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1397,29 +1306,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1662">
-          <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+        <state relative-caret-position="1970">
+          <caret line="110" column="39" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/RegisterPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="158" column="47" selection-start-line="157" selection-start-column="16" selection-end-line="158" selection-end-column="47" />
+        <state relative-caret-position="-866">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/AddPopup.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-956">
+          <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1433,21 +1346,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="75" column="65" selection-start-line="75" selection-start-column="65" selection-end-line="75" selection-end-column="65" />
+        <state relative-caret-position="279">
+          <caret line="67" column="56" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/AddPopup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/models/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/models/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
+        <state relative-caret-position="387">
           <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
           <folding>
             <element signature="e#219#225#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/models/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="160" column="24" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -65,7 +65,7 @@ public class BoardsPage extends UI
         addButton.getButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                AddPopup popup = new AddPopup();
+                AddPopup popup = new AddPopup("Add Board");
                 UI.getCurrent().addWindow(popup);
 
                 popup.getAddButton().addClickListener(new Button.ClickListener() {

@@ -9,6 +9,7 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
@@ -77,6 +78,9 @@ public class MyUI extends UI {
         titleBar.addElement(notificationButton.getButton(),0,0,29,29);
 
 
+
+
+
         // *********listy*********
         HorizontalLayout tableLayout = new HorizontalLayout();
         tableLayout.setSizeUndefined();
@@ -84,13 +88,92 @@ public class MyUI extends UI {
         tableLayout.setMargin(true);
 		
 		int n = board.size();
+
 		for(int i=0;i<n;i++)
 		{
+			final List x = board.get(i);
+			Button b = new Button("+");
+			b.setWidth(25,Unit.MM);
+			b.addClickListener(new Button.ClickListener() {
+				@Override
+				public void buttonClick(ClickEvent event) {
+					AddPopup popup = new AddPopup("Add Card");
+					UI.getCurrent().addWindow(popup);
+
+					popup.getAddButton().addClickListener(new Button.ClickListener() {
+						@Override
+						public void buttonClick(Button.ClickEvent event) {
+							x.addCard(new Card(popup.getName().getValue()));
+							popup.close();
+
+						}
+					});
+
+
+				}
+			});
+			Button b2 = new Button("...");
+			b2.setWidth(25,Unit.MM);
+			HorizontalLayout but = new HorizontalLayout(b,b2);
+			but.setSpacing(true);
 			Table t = loadList(board.get(i));
-			tableLayout.addComponent(t);
+			VerticalLayout v = new VerticalLayout(but,t);
+			v.setComponentAlignment(but,Alignment.MIDDLE_CENTER);
+			v.setSpacing(true);
+			tableLayout.addComponent(v);
           //  tableLayout.setComponentAlignment(t, Alignment.TOP_CENTER);
-            tableLayout.setExpandRatio(t, 1.0f);
+            tableLayout.setExpandRatio(v, 1.0f);
 		}
+
+		addButton.getButton().addClickListener(new Button.ClickListener() {
+			@Override
+			public void buttonClick(Button.ClickEvent event) {
+				AddPopup popup = new AddPopup("Add List");
+				UI.getCurrent().addWindow(popup);
+
+				popup.getAddButton().addClickListener(new Button.ClickListener() {
+					@Override
+					public void buttonClick(Button.ClickEvent event) {
+						List l = new List(popup.getName().getValue());
+						board.addList(l);
+						popup.close();
+
+						Button b = new Button("+");
+						b.setWidth(25,Unit.MM);
+						b.addClickListener(new Button.ClickListener() {
+							@Override
+							public void buttonClick(ClickEvent event) {
+								AddPopup popup = new AddPopup("Add Card");
+								UI.getCurrent().addWindow(popup);
+
+								popup.getAddButton().addClickListener(new Button.ClickListener() {
+									@Override
+									public void buttonClick(Button.ClickEvent event) {
+										l.addCard(new Card(popup.getName().getValue()));
+										popup.close();
+
+									}
+								});
+
+
+							}
+						});
+						
+						Button b2 = new Button("...");
+						b2.setWidth(25,Unit.MM);
+						HorizontalLayout but = new HorizontalLayout(b,b2);
+						but.setSpacing(true);
+						Table t = loadList(l);
+						VerticalLayout v = new VerticalLayout(but,t);
+						v.setComponentAlignment(but,Alignment.MIDDLE_CENTER);
+						v.setSpacing(true);
+						tableLayout.addComponent(v);
+
+					}
+				});
+
+			}
+		});
 
       /*  Panel panel = new Panel("Card");
         panel.addStyleName(Reindeer.PANEL_LIGHT);
@@ -120,14 +203,15 @@ public class MyUI extends UI {
 	{
 		Table table = new Table();
 			table.setStyleName(Reindeer.LAYOUT_BLACK);
-			table.setWidth(50,Unit.MM);
+			table.setWidth(60,Unit.MM);
 			table.setSelectable(true);
 			table.addContainerProperty(list.getName(), Panel.class, null);
-			
+
 		int n = list.size();
+
 		for(int i=0;i<n;i++)
 		{
-			Panel panel = loadCard(list.get(i));				
+			Panel panel = loadCard(list.get(i),i);
 			table.addItem(new Object[] {panel},  i);
 		}
 		
@@ -136,17 +220,15 @@ public class MyUI extends UI {
 		return table;
 	}
 	
-	Panel loadCard(Card card)
+	Panel loadCard(Card card, int cardIndex)
 	{
 		Panel panel = new Panel(card.getName());
 			panel.addStyleName(Reindeer.PANEL_LIGHT);
 			panel.setSizeFull();
-		
-		addCardClickListener(panel, card);
-		
+
 		return panel;
 	}
-	
+
 	void addCardClickListener(Panel panel, final Card card)
 	{
 		panel.addClickListener(new MouseEvents.ClickListener()

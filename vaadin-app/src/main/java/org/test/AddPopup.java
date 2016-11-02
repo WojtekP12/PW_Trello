@@ -14,9 +14,9 @@ public class AddPopup extends Window
     Button addButton;
     TextField name;
 
-    public AddPopup()
+    public AddPopup(String text)
     {
-        super("Add Board");
+        super(text);
         center();
 
         GridLayout layout = new GridLayout(1,2);

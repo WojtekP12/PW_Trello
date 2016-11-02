@@ -1,5 +1,7 @@
 package org.models;
 
+import com.vaadin.server.FontAwesome;
+
 import java.util.ArrayList;
 
 public class List 
