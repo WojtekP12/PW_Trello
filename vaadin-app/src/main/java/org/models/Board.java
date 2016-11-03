@@ -17,6 +17,7 @@ public class Board
 		this.name = name;
 		this.id = cID;
 		cID++;
+		boardsList.add(this);
 	}
 	
 	public void addList(List list)
@@ -52,10 +53,10 @@ public class Board
 			board.addList(list2);
 			board.addList(list3);
 				
-			boardsList.add(board);
+			//boardsList.add(board);
 			
 			Board board2 = new Board("Test board 2");
-			boardsList.add(board2);
+			//boardsList.add(board2);
 		}
 	}
 	

@@ -103,9 +103,11 @@ public class MyUI extends UI {
 					popup.getAddButton().addClickListener(new Button.ClickListener() {
 						@Override
 						public void buttonClick(Button.ClickEvent event) {
-							x.addCard(new Card(popup.getName().getValue()));
+							Card c = new Card(popup.getName().getValue());
+								c.setList(x);
+							x.addCard(c);
 							popup.close();
-
+							getUI().getPage().setLocation("/"); //*****
 						}
 					});
 
@@ -135,6 +137,7 @@ public class MyUI extends UI {
 					@Override
 					public void buttonClick(Button.ClickEvent event) {
 						List l = new List(popup.getName().getValue());
+							l.setBoard(board);
 						board.addList(l);
 						popup.close();
 
@@ -149,9 +152,11 @@ public class MyUI extends UI {
 								popup.getAddButton().addClickListener(new Button.ClickListener() {
 									@Override
 									public void buttonClick(Button.ClickEvent event) {
-										l.addCard(new Card(popup.getName().getValue()));
+										Card c = new Card(popup.getName().getValue());
+											c.setList(l);
+										l.addCard(c);
 										popup.close();
-
+										getUI().getPage().setLocation("/"); //*****
 									}
 								});
 
@@ -225,6 +230,8 @@ public class MyUI extends UI {
 		Panel panel = new Panel(card.getName());
 			panel.addStyleName(Reindeer.PANEL_LIGHT);
 			panel.setSizeFull();
+		
+		addCardClickListener(panel,card);
 
 		return panel;
 	}
