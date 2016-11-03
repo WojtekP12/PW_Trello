@@ -1,6 +1,7 @@
 package org.test;
 
 import com.vaadin.server.FontAwesome;
+import com.vaadin.server.Page;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
 import com.vaadin.ui.Button.ClickEvent;
@@ -21,6 +22,7 @@ public class MySub extends Window {
 	
 	private RichTextArea commentArea;
 	private Button sendComment;
+    private Button deleteButton;
 	private Panel activityPanel;
 
     public MySub(Card card) {
@@ -101,11 +103,19 @@ public class MySub extends Window {
         rightMenu.addComponent(subscribeButton);
 
         Button archiveButton = new Button("Zarchiwizuj");
-        rightMenu.addComponent(membersButton);
+        rightMenu.addComponent(archiveButton);
 
         Button shareButton = new Button("Udostępnij i więcej...");
         shareButton.addStyleName(Reindeer.BUTTON_LINK);
         rightMenu.addComponent(shareButton);
+
+        deleteButton = new Button("usuń");
+        deleteButton.addClickListener((Button.ClickListener) clickEvent -> {
+            getCard().getList().removeCard(card);
+            Page.getCurrent().reload();
+            close();
+        });
+        rightMenu.addComponent(deleteButton);
 
         subWindowContainer.addComponents(content, rightMenu);
         setContent(subWindowContainer);
@@ -191,4 +201,5 @@ public class MySub extends Window {
 			}
 		});
 	}
+    
 }

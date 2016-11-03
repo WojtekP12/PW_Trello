@@ -52,4 +52,6 @@ public class Card
 	{
 		comments.remove(c);
 	}
+
+	public void removeCard(Card card) {getList().removeCard(this);}
 }
