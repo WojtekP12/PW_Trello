@@ -7,6 +7,7 @@ public class Card
 	String name;
 	String description;
 	List parentList;
+	boolean archived;
 	ArrayList<Comment> comments = new ArrayList<Comment>();
 	
 	public Card(String name)
@@ -54,4 +55,14 @@ public class Card
 	}
 
 	public void removeCard(Card card) {getList().removeCard(this);}
+	
+	public boolean isArchived()
+	{
+		return archived;
+	}
+	
+	public void setArchived(boolean b)
+	{
+		archived = b;
+	}
 }

@@ -8,6 +8,7 @@ public class List
 {
 	String name;
 	Board parentBoard;
+	boolean archived = false;
 	public ArrayList<Card> cards = new ArrayList<Card>();
 	
 	public List(String name)
@@ -56,5 +57,15 @@ public class List
 	public void setBoard(Board board)
 	{
 		this.parentBoard = board;
+	}
+	
+	public boolean isArchived()
+	{
+		return archived;
+	}
+	
+	public void setArchived(boolean b)
+	{
+		archived = b;
 	}
 }

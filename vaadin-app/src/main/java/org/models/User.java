@@ -1,7 +1,7 @@
 package org.models;
 
 import java.util.ArrayList;
-
+import com.vaadin.server.VaadinService;
 
 public class User
 {
@@ -48,6 +48,11 @@ public class User
 		}
 		
 		return null;
+	}
+	
+	public static User getUserFromSession() throws NullPointerException
+	{
+		return findUser(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")));
 	}
 
 }

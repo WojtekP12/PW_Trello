@@ -9,7 +9,9 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.FontIcon;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.*;
 import org.controls.*;
 import org.models.*;
@@ -19,10 +21,15 @@ import javax.servlet.annotation.WebServlet;
 @Theme("mytheme")
 public class BoardsPage extends UI
 {
+	private String username;
+	
+	
     @Override
     protected void init(VaadinRequest request)
     {
-        final MainContainer layout = new MainContainer("boardsPageMainContainerStyle");
+        loadUsername();
+		
+		final MainContainer layout = new MainContainer("boardsPageMainContainerStyle");
         setContent(layout.getContainer());
 
         TitleBar titleBar = new TitleBar(1,30);
@@ -41,9 +48,17 @@ public class BoardsPage extends UI
         TitleBarButton addButton = new TitleBarButton("",FontAwesome.PLUS);
 
         titleBar.addElement(addButton.getButton(),0,0,24,24);
-
-        TitleBarButton userButton = new TitleBarButton("User",FontAwesome.USER);
-        titleBar.addElement(userButton.getButton(),0,0,25,27);
+		
+		TitleBarButton userButton = new TitleBarButton(username,FontAwesome.USER);
+		titleBar.addElement(userButton.getButton(),0,0,25,27);
+		userButton.getButton().addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", null);
+				getUI().getPage().setLocation("/LoginPage");
+			}
+		});
 
         TitleBarButton infoButton = new TitleBarButton("", FontAwesome.INFO);
         titleBar.addElement(infoButton.getButton(),0,0,28,28);
@@ -94,4 +109,16 @@ public class BoardsPage extends UI
     @VaadinServletConfiguration(ui = BoardsPage.class, productionMode = false)
     public static class BoardsPageServlet extends VaadinServlet {
     }
+	
+	void loadUsername()
+	{
+		username = String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"));
+		/*if(username == "null")
+			getUI().getPage().setLocation("/HomePage");*/
+		
+		
+	}
+	
+	
+	
 }
