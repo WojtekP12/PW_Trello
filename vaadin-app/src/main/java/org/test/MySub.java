@@ -6,7 +6,9 @@ import com.vaadin.ui.themes.Reindeer;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.server.VaadinService;
+import org.helpers.AddPopup;
 import org.models.Card;
+import org.models.List;
 import org.models.User;
 import org.models.Comment;
 
@@ -23,7 +25,7 @@ public class MySub extends Window {
 	private Button sendComment;
 	private Panel activityPanel;
 
-    public MySub(Card card) {
+    public MySub(List list, Card card) {
         super(card.getName()); // Set window caption
 		setCard(card);
         center();
@@ -93,6 +95,16 @@ public class MySub extends Window {
 
         Button moveButton = new Button("Przenieś");
         rightMenu.addComponent(moveButton);
+
+        Button deleteButton = new Button("Usuń");
+        deleteButton.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(ClickEvent event) {
+                list.removeCard(card);
+                getUI().getPage().setLocation("/");
+            }
+        });
+        rightMenu.addComponent(deleteButton);
 
         Button copyButton = new Button("Kopiuj");
         rightMenu.addComponent(copyButton);

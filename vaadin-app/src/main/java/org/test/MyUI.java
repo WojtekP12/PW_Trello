@@ -9,12 +9,11 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
-import javafx.scene.text.Font;
 import org.controls.*;
+import org.helpers.AddPopup;
 import org.models.*;
 
 /**
@@ -236,7 +235,7 @@ public class MyUI extends UI {
 
 		for(int i=0;i<n;i++)
 		{
-			Panel panel = loadCard(list.get(i),i);
+			Panel panel = loadCard(list,list.get(i),i);
 			table.addItem(new Object[] {panel},  i);
 		}
 		
@@ -245,18 +244,18 @@ public class MyUI extends UI {
 		return table;
 	}
 	
-	Panel loadCard(Card card, int cardIndex)
+	Panel loadCard(List list,Card card, int cardIndex)
 	{
 		Panel panel = new Panel(card.getName());
 			panel.addStyleName(Reindeer.PANEL_LIGHT);
 			panel.setSizeFull();
 		
-		addCardClickListener(panel,card);
+		addCardClickListener(list,panel,card);
 
 		return panel;
 	}
 
-	void addCardClickListener(Panel panel, final Card card)
+	void addCardClickListener(List list,Panel panel, final Card card)
 	{
 		panel.addClickListener(new MouseEvents.ClickListener()
 		{
@@ -264,7 +263,7 @@ public class MyUI extends UI {
 			public void click(MouseEvents.ClickEvent clickEvent)
 			{
 				Notification.show(card.getName());
-				MySub sub = new MySub(card);
+				MySub sub = new MySub(list,card);
 				UI.getCurrent().addWindow(sub);
 			}
 		});
