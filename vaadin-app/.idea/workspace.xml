@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8bf403b-bcde-4f91-8ffe-70a8813b3601" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/test/AddPopup.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/test/AddPopup.java" afterPath="$PROJECT_DIR$/src/main/java/org/helpers/AddPopup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/BoardsPage$1$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/BoardsPage$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/BoardsPage$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/BoardsPage$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$2.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$2.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$3$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$3$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$3.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$4.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$2.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$6.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$MyUIServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/MySub.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/MySub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" />
     </list>
     <ignored path="vaadin-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,7 +35,7 @@
       <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="1826">
               <caret line="100" column="53" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="53" />
               <folding />
             </state>
@@ -78,7 +55,7 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
+            <state relative-caret-position="287276">
               <caret line="13058" column="1" selection-start-line="13058" selection-start-column="1" selection-end-line="13058" selection-end-column="1" />
               <folding />
             </state>
@@ -88,7 +65,7 @@
       <file leaf-file-name="BoardsPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="1518">
               <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
@@ -98,7 +75,7 @@
       <file leaf-file-name="AddPopup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/helpers/AddPopup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
+            <state relative-caret-position="858">
               <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
               <folding />
             </state>
@@ -108,7 +85,7 @@
       <file leaf-file-name="MySub.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="22">
               <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
               <folding />
             </state>
@@ -236,8 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,7 +409,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -950,31 +927,31 @@
       <workItem from="1478113505229" duration="11808000" />
       <workItem from="1478165734850" duration="4343000" />
       <workItem from="1478177925636" duration="1938000" />
-      <workItem from="1478442242768" duration="2223000" />
+      <workItem from="1478442242768" duration="2776000" />
+      <workItem from="1478607536766" duration="299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83492000" />
+    <option name="totallyTimeSpent" value="84344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37372592" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19026047" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19026047" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26233906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26233906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -986,6 +963,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1424,7 +1402,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="287276">
           <caret line="13058" column="1" selection-start-line="13058" selection-start-column="1" selection-end-line="13058" selection-end-column="1" />
           <folding />
         </state>
@@ -1432,7 +1410,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/helpers/AddPopup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
+        <state relative-caret-position="858">
           <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
           <folding />
         </state>
@@ -1440,7 +1418,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
+        <state relative-caret-position="1518">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
@@ -1448,7 +1426,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="1826">
           <caret line="100" column="53" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="53" />
           <folding />
         </state>
@@ -1456,7 +1434,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="22">
           <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
           <folding />
         </state>
