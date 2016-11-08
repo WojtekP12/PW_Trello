@@ -1,6 +1,7 @@
 package org.test;
 
 import com.vaadin.server.FontAwesome;
+import com.vaadin.server.Page;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
 import com.vaadin.ui.Button.ClickEvent;
@@ -23,6 +24,7 @@ public class MySub extends Window {
 	
 	private RichTextArea commentArea;
 	private Button sendComment;
+    private Button deleteButton;
 	private Panel activityPanel;
 
     public MySub(List list, Card card) {
@@ -112,12 +114,54 @@ public class MySub extends Window {
         Button subscribeButton = new Button("Subskrybuj");
         rightMenu.addComponent(subscribeButton);
 
+		
         Button archiveButton = new Button("Zarchiwizuj");
-        rightMenu.addComponent(membersButton);
+		if(card.isArchived())
+			archiveButton.setCaption("Przywróć");
+        archiveButton.addClickListener((Button.ClickListener) clickEvent -> {
+					if(!getCard().isArchived())
+					{
+						getCard().setArchived(true);
+						
+						deleteButton = new Button("Usuń");
+						deleteButton.addClickListener(new Button.ClickListener() {
+							@Override
+							public void buttonClick(Button.ClickEvent event) 
+							{
+								getCard().getList().removeCard(card);
+								Page.getCurrent().reload();
+								close();
+							}
+						});
+						
+						rightMenu.addComponent(deleteButton);
+						archiveButton.setCaption("Przywróć");
+					} else
+					{
+						getCard().setArchived(false);
+						
+						rightMenu.removeComponent(deleteButton);
+						
+						archiveButton.setCaption("Zarchiwizuj");
+					}
+			});
+		rightMenu.addComponent(archiveButton);
+		
 
         Button shareButton = new Button("Udostępnij i więcej...");
         shareButton.addStyleName(Reindeer.BUTTON_LINK);
         rightMenu.addComponent(shareButton);
+
+		if(card.isArchived())
+		{
+			deleteButton = new Button("Usuń");
+			deleteButton.addClickListener((Button.ClickListener) clickEvent -> {
+				getCard().getList().removeCard(card);
+				Page.getCurrent().reload();
+				close();
+			});
+			rightMenu.addComponent(deleteButton);
+		}
 
         subWindowContainer.addComponents(content, rightMenu);
         setContent(subWindowContainer);
@@ -203,4 +247,5 @@ public class MySub extends Window {
 			}
 		});
 	}
+
 }

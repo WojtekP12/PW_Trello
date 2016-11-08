@@ -91,50 +91,54 @@ public class MyUI extends UI {
 		for(int i=0;i<n;i++)
 		{
 			final List x = board.get(i);
-			Button b = new Button(FontAwesome.PLUS);
-			b.setWidth(25,Unit.MM);
-			b.addStyleName("loginPageLoginButtonStyle");
-			b.addClickListener(new Button.ClickListener() {
-				@Override
-				public void buttonClick(ClickEvent event) {
-					AddPopup popup = new AddPopup("Add Card");
-					UI.getCurrent().addWindow(popup);
+			if(!x.isArchived())
+			{
+				Button b = new Button(FontAwesome.PLUS);
+				b.setWidth(25,Unit.MM);
+				b.addStyleName("loginPageLoginButtonStyle");
+				b.addClickListener(new Button.ClickListener() {
+					@Override
+					public void buttonClick(ClickEvent event) {
+						AddPopup popup = new AddPopup("Add Card");
+						UI.getCurrent().addWindow(popup);
 
-					popup.getAddButton().addClickListener(new Button.ClickListener() {
-						@Override
-						public void buttonClick(Button.ClickEvent event) {
-							Card c = new Card(popup.getName().getValue());
-								c.setList(x);
-							x.addCard(c);
-							popup.close();
-							getUI().getPage().setLocation("/"); //*****
-						}
-					});
+						popup.getAddButton().addClickListener(new Button.ClickListener() {
+							@Override
+							public void buttonClick(Button.ClickEvent event) {
+								Card c = new Card(popup.getName().getValue());
+									c.setList(x);
+								x.addCard(c);
+								popup.close();
+								getUI().getPage().setLocation("/"); //*****
+							}
+						});
 
 
-				}
-			});
-			Button b1 = new Button(FontAwesome.CLOSE);
-			Button b2 = new Button(FontAwesome.BARS);
-			b2.setWidth(25,Unit.MM);
-			HorizontalLayout but = new HorizontalLayout(b,b2);
-			but.setSpacing(true);
-			Table t = loadList(board.get(i));
-			HorizontalLayout h = new HorizontalLayout(t,b1);
-			VerticalLayout v = new VerticalLayout(but,h);
-			v.setComponentAlignment(but,Alignment.MIDDLE_CENTER);
-			v.setSpacing(true);
-			tableLayout.addComponent(v);
+					}
+				});
+				Button b1 = new Button(FontAwesome.CLOSE);
+				Button b2 = new Button(FontAwesome.BARS);
+				b2.setWidth(25,Unit.MM);
+				HorizontalLayout but = new HorizontalLayout(b,b2);
+				but.setSpacing(true);
+				Table t = loadList(board.get(i));
+				HorizontalLayout h = new HorizontalLayout(t,b1);
+				VerticalLayout v = new VerticalLayout(but,h);
+				v.setComponentAlignment(but,Alignment.MIDDLE_CENTER);
+				v.setSpacing(true);
+				tableLayout.addComponent(v);
 
-			b1.addClickListener(new Button.ClickListener() {
-				@Override
-				public void buttonClick(ClickEvent event) {
-					tableLayout.removeComponent(v);
-				}
-			});
-
-          //  tableLayout.setComponentAlignment(t, Alignment.TOP_CENTER);
-            tableLayout.setExpandRatio(v, 1.0f);
+				b1.addClickListener(new Button.ClickListener() {
+					@Override
+					public void buttonClick(ClickEvent event) {
+						tableLayout.removeComponent(v);
+						x.setArchived(true);
+					}
+				});
+			
+			  //  tableLayout.setComponentAlignment(t, Alignment.TOP_CENTER);
+				tableLayout.setExpandRatio(v, 1.0f);
+			}
 		}
 
 		addButton.getButton().addClickListener(new Button.ClickListener() {
@@ -235,8 +239,16 @@ public class MyUI extends UI {
 
 		for(int i=0;i<n;i++)
 		{
+<<<<<<< HEAD
 			Panel panel = loadCard(list,list.get(i),i);
 			table.addItem(new Object[] {panel},  i);
+=======
+			if(!list.get(i).isArchived())
+			{
+				Panel panel = loadCard(list.get(i),i);
+				table.addItem(new Object[] {panel},  i);
+			}
+>>>>>>> af75e947f7a8493e8daa99bae0aca9e954ab0c74
 		}
 		
 		table.setPageLength(table.size());
