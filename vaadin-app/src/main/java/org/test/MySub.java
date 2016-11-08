@@ -98,7 +98,7 @@ public class MySub extends Window {
         Button moveButton = new Button("Przenieś");
         rightMenu.addComponent(moveButton);
 
-        Button deleteButton = new Button("Usuń");
+        final Button deleteButton = new Button("Usuń");
         deleteButton.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(ClickEvent event) {
@@ -123,7 +123,7 @@ public class MySub extends Window {
 					{
 						getCard().setArchived(true);
 						
-						deleteButton = new Button("Usuń");
+						//deleteButton = new Button("Usuń");
 						deleteButton.addClickListener(new Button.ClickListener() {
 							@Override
 							public void buttonClick(Button.ClickEvent event) 
@@ -154,7 +154,7 @@ public class MySub extends Window {
 
 		if(card.isArchived())
 		{
-			deleteButton = new Button("Usuń");
+			//deleteButton = new Button("Usuń");
 			deleteButton.addClickListener((Button.ClickListener) clickEvent -> {
 				getCard().getList().removeCard(card);
 				Page.getCurrent().reload();
