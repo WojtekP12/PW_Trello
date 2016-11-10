@@ -5,9 +5,10 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.*;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-import javafx.scene.text.Font;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.UI;
 import org.controls.MainContainer;
 import org.controls.TitleBar;
 import org.controls.TitleBarButton;
@@ -48,7 +49,7 @@ public class HomePage extends UI{
 
     }
 
-    @WebServlet(urlPatterns = "HomePage/*", name = "HomePageServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/HomePage/*", name = "HomePageServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = HomePage.class, productionMode = false)
     public static class HomePageServlet extends VaadinServlet {
     }

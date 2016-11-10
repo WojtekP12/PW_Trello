@@ -1,7 +1,5 @@
 package org.test;
 
-import javax.servlet.annotation.WebServlet;
-
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.event.MouseEvents;
@@ -9,12 +7,16 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.*;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.Reindeer;
 import org.controls.*;
 import org.helpers.AddPopup;
-import org.models.*;
+import org.models.Board;
+import org.models.Card;
+import org.models.List;
+
+import javax.servlet.annotation.WebServlet;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -237,22 +239,19 @@ public class MyUI extends UI {
 
 		int n = list.size();
 
-		for(int i=0;i<n;i++)
+		/*for(int i=0;i<n;i++)
 		{
-<<<<<<< HEAD
 			Panel panel = loadCard(list,list.get(i),i);
 			table.addItem(new Object[] {panel},  i);
-=======
 			if(!list.get(i).isArchived())
 			{
 				Panel panel = loadCard(list.get(i),i);
 				table.addItem(new Object[] {panel},  i);
 			}
->>>>>>> af75e947f7a8493e8daa99bae0aca9e954ab0c74
 		}
 		
 		table.setPageLength(table.size());
-		
+		*/
 		return table;
 	}
 	

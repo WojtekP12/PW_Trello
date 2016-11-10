@@ -2,15 +2,17 @@ package org.models;
 
 import java.time.LocalDateTime;
 
-public class Comment
-{
-	Card parentCard;
-	User author;
-	String value;
-	LocalDateTime time;
+public class Comment {
+
+	private Card parentCard;
+
+	private User author;
+
+	private String value;
+
+	private LocalDateTime time;
 		
-	public Comment(User author, String value)
-	{
+	public Comment(User author, String value) {
 		this.author = author;
 		this.value = value;
 		this.time = LocalDateTime.now();
@@ -21,8 +23,7 @@ public class Comment
 		return parentCard;
 	}
 	
-	public void setCard(Card card)
-	{
+	public void setCard(Card card)	{
 		this.parentCard = card;
 		card.addComment(this);
 	}

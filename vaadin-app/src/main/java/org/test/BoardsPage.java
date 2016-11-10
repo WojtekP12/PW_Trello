@@ -105,7 +105,7 @@ public class BoardsPage extends UI
 
     }
 
-    @WebServlet(urlPatterns = "BoardsPage/*", name = "BoardsPageServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/BoardsPage/*", name = "BoardsPageServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = BoardsPage.class, productionMode = false)
     public static class BoardsPageServlet extends VaadinServlet {
     }

@@ -124,7 +124,7 @@ public class RegisterPage extends UI
 
 	}
 
-    @WebServlet(urlPatterns = "RegisterPage/*", name = "RegisterPageServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/RegisterPage/*", name = "RegisterPageServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = RegisterPage.class, productionMode = false)
     public static class RegisterPageServlet extends VaadinServlet {
     }

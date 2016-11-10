@@ -2,7 +2,6 @@ package org.test;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
@@ -10,10 +9,7 @@ import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 import org.controls.MainContainer;
-import org.controls.TitleBar;
-import org.controls.TitleBarButton;
-import org.controls.TitleBarTitleLabel;
-import org.models.*;
+import org.models.User;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -73,7 +69,7 @@ public class LoginPage extends UI {
 		User.testUsers();
     }
 
-    @WebServlet(urlPatterns = "LoginPage/*", name = "LoginPageServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/LoginPage/*", name = "LoginPageServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = LoginPage.class, productionMode = false)
     public static class LoginPageServlet extends VaadinServlet {
     }
