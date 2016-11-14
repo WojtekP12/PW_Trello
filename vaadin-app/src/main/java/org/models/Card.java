@@ -9,6 +9,7 @@ public class Card
 	List parentList;
 	boolean archived;
 	ArrayList<Comment> comments = new ArrayList<Comment>();
+	ArrayList<String> labels = new ArrayList<String>();
 	
 	public Card(String name)
 	{
@@ -64,5 +65,25 @@ public class Card
 	public void setArchived(boolean b)
 	{
 		archived = b;
+	}
+	
+	public void addLabel(String label)
+	{
+		labels.add(label);
+	}
+	
+	public int getLabelsSize()
+	{
+		return labels.size();
+	}
+	
+	public String getLabel(int i)
+	{
+		return labels.get(i);
+	}
+	
+	public void removeLabel(String i)
+	{
+		labels.remove(i);
 	}
 }

@@ -216,7 +216,7 @@ public class MyUI extends UI {
             }
         });*/
 
-        layout.addElement(tableLayout);
+		layout.addElement(tableLayout);
         layout.getContainer().setExpandRatio(tableLayout,0.8f);
 
         setContent(layout.getContainer());
@@ -239,16 +239,11 @@ public class MyUI extends UI {
 
 		for(int i=0;i<n;i++)
 		{
-<<<<<<< HEAD
-			Panel panel = loadCard(list,list.get(i),i);
-			table.addItem(new Object[] {panel},  i);
-=======
 			if(!list.get(i).isArchived())
 			{
 				Panel panel = loadCard(list.get(i),i);
 				table.addItem(new Object[] {panel},  i);
 			}
->>>>>>> af75e947f7a8493e8daa99bae0aca9e954ab0c74
 		}
 		
 		table.setPageLength(table.size());
@@ -256,18 +251,18 @@ public class MyUI extends UI {
 		return table;
 	}
 	
-	Panel loadCard(List list,Card card, int cardIndex)
+	Panel loadCard(Card card, int cardIndex)
 	{
 		Panel panel = new Panel(card.getName());
 			panel.addStyleName(Reindeer.PANEL_LIGHT);
 			panel.setSizeFull();
 		
-		addCardClickListener(list,panel,card);
+		addCardClickListener(panel,card);
 
 		return panel;
 	}
 
-	void addCardClickListener(List list,Panel panel, final Card card)
+	void addCardClickListener(Panel panel, final Card card)
 	{
 		panel.addClickListener(new MouseEvents.ClickListener()
 		{
@@ -275,7 +270,7 @@ public class MyUI extends UI {
 			public void click(MouseEvents.ClickEvent clickEvent)
 			{
 				Notification.show(card.getName());
-				MySub sub = new MySub(list,card);
+				MySub sub = new MySub(card);
 				UI.getCurrent().addWindow(sub);
 			}
 		});
@@ -309,6 +304,5 @@ public class MyUI extends UI {
 		}
 		
 		
-	}
-	
+	}	
 }

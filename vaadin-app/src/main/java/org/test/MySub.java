@@ -21,19 +21,25 @@ import static com.vaadin.server.FontAwesome.BOLD;
 public class MySub extends Window {
     private Card card;
     private GridLayout container;
+	private GridLayout content;
 	
 	private RichTextArea commentArea;
 	private Button sendComment;
     private Button deleteButton;
 	private Panel activityPanel;
 
-    public MySub(List list, Card card) {
+    public MySub(Card card) {
         super(card.getName()); // Set window caption
 		setCard(card);
+		init(card);
+    }
+
+    public void init(Card card)
+    {
         center();
 
         HorizontalLayout subWindowContainer = new HorizontalLayout();
-        GridLayout content = new GridLayout(10,10);
+        content = new GridLayout(10,10);
 
         content.addComponent(new Label("w liście "),1,1);
 
@@ -68,6 +74,10 @@ public class MySub extends Window {
         activityPanel.setHeight(100f, Unit.MM);
         content.addComponent(activityPanel,1,8,9,8);
 		loadComments();
+		
+		HorizontalLayout labelsLayout = loadLabels();
+		content.addComponent(labelsLayout,0,9,9,9);
+		
 
         content.setMargin(true);
 
@@ -82,6 +92,7 @@ public class MySub extends Window {
 
         Button labelsButton = new Button("Etykiety");
         rightMenu.addComponent(labelsButton);
+		addLabelsButtonClickListener(labelsButton);
 
         Button taskListButton = new Button("Lista zadań");
         rightMenu.addComponent(taskListButton);
@@ -102,7 +113,7 @@ public class MySub extends Window {
         deleteButton.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(ClickEvent event) {
-                list.removeCard(card);
+                getCard().getList().removeCard(card);
                 getUI().getPage().setLocation("/");
             }
         });
@@ -168,11 +179,6 @@ public class MySub extends Window {
         setClosable(true);
 		
 		addCommentButtonListener();
-    }
-
-    public void init(Card card)
-    {
-
 
     }
     public void setCard(Card card) {this.card = card; }
@@ -182,6 +188,13 @@ public class MySub extends Window {
     public void setContainer(GridLayout container) {this.container = container; }
 
     public GridLayout getContainer() {return this.container; }
+	
+	
+	void refreshContent()
+	{
+		content.removeAllComponents();
+		init(card);
+	}
 	
 	void addCommentButtonListener()
 	{
@@ -246,6 +259,56 @@ public class MySub extends Window {
 				loadComments();
 			}
 		});
+	}
+	
+	void addLabelsButtonClickListener(Button button)
+	{
+		button.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				AddPopup popup = new AddPopup("Add label");
+				UI.getCurrent().addWindow(popup);
+				
+				popup.getAddButton().addClickListener(new Button.ClickListener()
+				{
+					@Override
+					public void buttonClick(Button.ClickEvent event)
+					{
+						card.addLabel(popup.getName().getValue());
+						popup.close();
+						refreshContent();
+					}
+				});
+			}
+		});
+	}
+	
+	HorizontalLayout loadLabels()
+	{
+		HorizontalLayout l = new HorizontalLayout();
+	
+		l.addComponent(new Label("Labels: "));
+		
+		int n = card.getLabelsSize();
+		for(int i=0;i<n;i++)
+		{
+			final String j = card.getLabel(i);
+			Button button = new Button(j);
+			button.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					card.removeLabel(j);
+					l.removeComponent(button);
+				}
+			});
+			l.addComponent(button);
+		}
+		
+		l.setSpacing(true);
+		
+		return l;
 	}
 
 }
