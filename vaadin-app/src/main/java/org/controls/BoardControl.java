@@ -1,12 +1,10 @@
 package org.controls;
 
+import com.vaadin.server.FontAwesome;
 import com.vaadin.server.Sizeable;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.server.VaadinService;
-import com.vaadin.ui.UI;
 import org.models.*;
 
 /**
@@ -15,6 +13,7 @@ import org.models.*;
 public class BoardControl
 {
     VerticalLayout board;
+    Button deleteButton;
 
     public BoardControl(String boardName)
     {
@@ -46,9 +45,19 @@ public class BoardControl
 			}
 		});
 
-        board = new VerticalLayout(boardLabel, boardButton);
+        deleteButton = new Button(FontAwesome.CLOSE);
+
+        HorizontalLayout h = new HorizontalLayout(boardButton,deleteButton);
+
+        board = new VerticalLayout(boardLabel, h);
     }
-	
+
+    public Button GetDeleteButton()
+    {
+        return deleteButton;
+    }
+
+
     public VerticalLayout getBoard()
     {
         return board;

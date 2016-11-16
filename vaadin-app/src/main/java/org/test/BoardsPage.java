@@ -73,7 +73,16 @@ public class BoardsPage extends UI
 		int n = Board.boardsList.size();
 		for(int i=0;i<n;i++)
 		{
-			BoardControl board = new BoardControl(Board.boardsList.get(i));
+            final Board b = Board.boardsList.get(i);
+			BoardControl board = new BoardControl(b);
+            board.GetDeleteButton().addClickListener(new Button.ClickListener() {
+                @Override
+                public void buttonClick(ClickEvent event) {
+
+                    boardList.removeComponent(board.getBoard());
+                    Board.boardsList.remove(b);
+                }
+            });
 			boardList.addComponent(board.getBoard());
 		}
 
@@ -82,13 +91,25 @@ public class BoardsPage extends UI
             public void buttonClick(Button.ClickEvent event) {
                 AddPopup popup = new AddPopup("Add Board");
                 UI.getCurrent().addWindow(popup);
-
+                HorizontalLayout h = new HorizontalLayout();
                 popup.getAddButton().addClickListener(new Button.ClickListener() {
                     @Override
                     public void buttonClick(Button.ClickEvent event) {
                         Board b = new Board(popup.getName().getValue());
                         BoardControl board = new BoardControl(b);
-                        boardList.addComponent(board.getBoard());
+                        board.GetDeleteButton().addClickListener(new Button.ClickListener() {
+                            @Override
+                            public void buttonClick(ClickEvent event) {
+
+                                boardList.removeComponent(board.getBoard());
+                                h.removeComponent(board.getBoard());
+                                Board.boardsList.remove(b);
+                            }
+                        });
+
+                        h.addComponent(board.getBoard());
+                        boardList.addComponent(h);
+
                         popup.close();
                     }
                 });
