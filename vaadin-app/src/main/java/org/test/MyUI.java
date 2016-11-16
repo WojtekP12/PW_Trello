@@ -283,6 +283,8 @@ public class MyUI extends UI {
 			getUI().getPage().setLocation("/HomePage");*/
 		
 		Board.testBoard();
+		User.testUsers();
+		
 		try
 		{
 			board = Board.boardsList.get(0);

@@ -50,6 +50,19 @@ public class User
 		return null;
 	}
 	
+	public static boolean userExists(String username)
+	{
+		
+		int n = User.users.size();
+		for(int i=0;i<n;i++)
+		{
+			if(users.get(i).username.equals(username))
+				return true;
+		}
+		
+		return false;			
+	}
+	
 	public static User getUserFromSession() throws NullPointerException
 	{
 		return findUser(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")));

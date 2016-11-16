@@ -13,6 +13,7 @@ import org.models.List;
 import org.models.User;
 import org.models.Comment;
 
+
 import static com.vaadin.server.FontAwesome.BOLD;
 
 /**
@@ -26,6 +27,7 @@ public class MySub extends Window {
 	private RichTextArea commentArea;
 	private Button sendComment;
     private Button deleteButton;
+	private Button subscribeButton;
 	private Panel activityPanel;
 
     public MySub(Card card) {
@@ -39,7 +41,7 @@ public class MySub extends Window {
         center();
 
         HorizontalLayout subWindowContainer = new HorizontalLayout();
-        content = new GridLayout(10,10);
+        content = new GridLayout(11,11);
 
         content.addComponent(new Label("w liście "),1,1);
 
@@ -78,6 +80,8 @@ public class MySub extends Window {
 		HorizontalLayout labelsLayout = loadLabels();
 		content.addComponent(labelsLayout,0,9,9,9);
 		
+		HorizontalLayout usersLayout = loadMembers();
+		content.addComponent(usersLayout, 0,10,9,10);
 
         content.setMargin(true);
 
@@ -89,6 +93,7 @@ public class MySub extends Window {
 
         Button membersButton = new Button("Członkowie");
         rightMenu.addComponent(membersButton);
+		addMembersButtonClickListener(membersButton);
 
         Button labelsButton = new Button("Etykiety");
         rightMenu.addComponent(labelsButton);
@@ -122,7 +127,21 @@ public class MySub extends Window {
         Button copyButton = new Button("Kopiuj");
         rightMenu.addComponent(copyButton);
 
-        Button subscribeButton = new Button("Subskrybuj");
+        if(card.isSubscribedBy(User.getUserFromSession()))
+		{
+			subscribeButton = new Button("Zasubskrybowano");
+			subscribeButton.addClickListener((Button.ClickListener) clickEvent -> {
+				card.removeSubscriber(User.getUserFromSession());
+				refreshContent();
+			});
+		} else
+		{
+			subscribeButton = new Button("Subskrybuj");
+			subscribeButton.addClickListener((Button.ClickListener) clickEvent -> {
+				card.addSubscriber(User.getUserFromSession());
+				refreshContent();
+			});
+		}
         rightMenu.addComponent(subscribeButton);
 
 		
@@ -300,6 +319,64 @@ public class MySub extends Window {
 				public void buttonClick(ClickEvent event)
 				{
 					card.removeLabel(j);
+					l.removeComponent(button);
+				}
+			});
+			l.addComponent(button);
+		}
+		
+		l.setSpacing(true);
+		
+		return l;
+	}
+	
+	void addMembersButtonClickListener(Button button)
+	{
+		button.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				AddPopup popup = new AddPopup("Add member");
+				UI.getCurrent().addWindow(popup);
+				
+				popup.getAddButton().addClickListener(new Button.ClickListener()
+				{
+					@Override
+					public void buttonClick(Button.ClickEvent event)
+					{
+						if(User.userExists(popup.getName().getValue())) // if (USER JEST DODANY DO TABLICY)
+						{
+							User u = User.findUser(popup.getName().getValue());
+							card.addMember(u);
+							card.addSubscriber(u);
+							popup.close();
+							refreshContent();
+						} else
+						{
+							Notification.show("User doesn't exist!");
+						}
+					}
+				});
+			}
+		});
+	}
+	
+	HorizontalLayout loadMembers()
+	{
+		HorizontalLayout l = new HorizontalLayout();
+		
+		l.addComponent(new Label("Users: "));
+		
+		int n = card.getMembersSize();
+		for(int i=0;i<n;i++)
+		{
+			final User u = card.getMember(i);
+			Button button = new Button(u.username);
+			button.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					card.removeMember(u);
 					l.removeComponent(button);
 				}
 			});

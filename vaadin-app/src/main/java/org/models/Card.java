@@ -1,6 +1,7 @@
 package org.models;
 
 import java.util.ArrayList;
+import org.models.User;
 
 public class Card 
 {
@@ -10,6 +11,8 @@ public class Card
 	boolean archived;
 	ArrayList<Comment> comments = new ArrayList<Comment>();
 	ArrayList<String> labels = new ArrayList<String>();
+	ArrayList<User> members = new ArrayList<User>();
+	ArrayList<User> subscribers = new ArrayList<User>();
 	
 	public Card(String name)
 	{
@@ -85,5 +88,50 @@ public class Card
 	public void removeLabel(String i)
 	{
 		labels.remove(i);
+	}
+	
+	public void addMember(User user)
+	{
+		members.add(user);
+	}
+	
+	public int getMembersSize()
+	{
+		return members.size();
+	}
+	
+	public User getMember(int i)
+	{
+		return members.get(i);
+	}
+	
+	public void removeMember(User user)
+	{
+		members.remove(user);
+	}
+	
+	public void addSubscriber(User user)
+	{
+		subscribers.add(user);
+	}
+	
+	public int getSubscribersSize()
+	{
+		return subscribers.size();
+	}
+	
+	public User getSubscriber(int i)
+	{
+		return subscribers.get(i);
+	}
+	
+	public void removeSubscriber(User user)
+	{
+		subscribers.remove(user);
+	}
+	
+	public boolean isSubscribedBy(User user)
+	{
+		return subscribers.contains(user);
 	}
 }
