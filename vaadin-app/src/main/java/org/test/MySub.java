@@ -28,6 +28,7 @@ public class MySub extends Window {
 	private Button sendComment;
     private Button deleteButton;
 	private Button subscribeButton;
+	private Button editName;
 	private Panel activityPanel;
 
     public MySub(Card card) {
@@ -50,9 +51,10 @@ public class MySub extends Window {
         content .addComponent(button,2,1);
         content.setComponentAlignment(button,Alignment.TOP_LEFT);
 
-        Button editDescription = new Button("Edytuj opis");
-        editDescription.setStyleName(Reindeer.BUTTON_LINK);
-        content.addComponent(editDescription,1,3);
+        editName = new Button("Edytuj nazwe");
+		editName.setStyleName(Reindeer.BUTTON_LINK);
+        content.addComponent(editName,1,3);
+		addChangeNameButtonListener(editName);
 
         Label addCommentLabel = new Label("Dodaj komentarz");
         content.addComponent(addCommentLabel,1,4);
@@ -223,13 +225,38 @@ public class MySub extends Window {
 			{
 				String commentValue = commentArea.getValue();
 				commentArea.clear();
-				
+
 				User user = User.findUser(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")));
-				
+
 				Comment comment = new Comment(user, commentValue);
 				comment.setCard(card);
-				
+
 				loadComments();
+			}
+		});
+	}
+
+	void addChangeNameButtonListener(Button button)
+	{
+		button.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				AddPopup popup = new AddPopup("Change name");
+				UI.getCurrent().addWindow(popup);
+
+				popup.getAddButton().addClickListener(new Button.ClickListener()
+				{
+					@Override
+					public void buttonClick(Button.ClickEvent event)
+					{
+						card.setName(popup.getName().getValue());
+						popup.close();
+						refreshContent();
+						Page.getCurrent().reload();
+					}
+				});
+
 			}
 		});
 	}
@@ -339,24 +366,19 @@ public class MySub extends Window {
 				AddPopup popup = new AddPopup("Add member");
 				UI.getCurrent().addWindow(popup);
 				
-				popup.getAddButton().addClickListener(new Button.ClickListener()
-				{
-					@Override
-					public void buttonClick(Button.ClickEvent event)
-					{
-						if(User.userExists(popup.getName().getValue())) // if (USER JEST DODANY DO TABLICY)
-						{
-							User u = User.findUser(popup.getName().getValue());
-							card.addMember(u);
-							card.addSubscriber(u);
-							popup.close();
-							refreshContent();
-						} else
-						{
-							Notification.show("User doesn't exist!");
-						}
-					}
-				});
+				popup.getAddButton().addClickListener((Button.ClickListener) event1 -> {
+                    if(User.userExists(popup.getName().getValue())) // if (USER JEST DODANY DO TABLICY)
+                    {
+                        User u = User.findUser(popup.getName().getValue());
+                        card.addMember(u);
+                        card.addSubscriber(u);
+                        popup.close();
+                        refreshContent();
+                    } else
+                    {
+                        Notification.show("User doesn't exist!");
+                    }
+                });
 			}
 		});
 	}
