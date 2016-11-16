@@ -68,4 +68,8 @@ public class List
 	{
 		archived = b;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }

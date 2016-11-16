@@ -2,19 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8bf403b-bcde-4f91-8ffe-70a8813b3601" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/models/Card.class" afterPath="$PROJECT_DIR$/target/classes/org/models/Card.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/models/User.class" afterPath="$PROJECT_DIR$/target/classes/org/models/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$2.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$3.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$4.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$5.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub$6.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MySub.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MySub.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/models/List.class" afterPath="$PROJECT_DIR$/target/classes/org/models/List.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$2.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$3$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$3.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$4.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$2.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$5.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$6.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI$MyUIServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/test/MyUI.class" afterPath="$PROJECT_DIR$/target/classes/org/test/MyUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/models/Card.java" afterPath="$PROJECT_DIR$/src/main/java/org/models/Card.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/MySub.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/MySub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/models/List.java" afterPath="$PROJECT_DIR$/src/main/java/org/models/List.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" />
     </list>
     <ignored path="vaadin-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+            <state relative-caret-position="106">
+              <caret line="285" column="58" selection-start-line="285" selection-start-column="58" selection-end-line="285" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -94,10 +98,13 @@
       <file leaf-file-name="List.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/models/List.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="392">
+              <caret line="71" column="30" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="30" />
               <folding>
+                <element signature="e#255#256#0" expanded="true" />
                 <element signature="e#278#279#0" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1001#1002#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySub.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MySub.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="255" column="48" selection-start-line="255" selection-start-column="42" selection-end-line="255" selection-end-column="48" />
+            <state relative-caret-position="242">
+              <caret line="261" column="5" selection-start-line="238" selection-start-column="4" selection-end-line="261" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -190,15 +197,15 @@
         <option value="$PROJECT_DIR$/src/main/java/org/controls/TitleBar.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/BoardsClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/controls/MainContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/models/List.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/AddPopup.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.scss" />
         <option value="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css" />
-        <option value="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/controls/BoardControl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/BoardsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/models/Card.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/test/MySub.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/models/List.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/test/MyUI.java" />
       </list>
     </option>
   </component>
@@ -337,6 +344,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaadin-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaadin-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -899,12 +936,12 @@
       <workItem from="1479309589523" duration="2460000" />
       <workItem from="1479324891530" duration="1538000" />
       <workItem from="1479335004294" duration="1304000" />
-      <workItem from="1479336416009" duration="772000" />
+      <workItem from="1479336416009" duration="3632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91096000" />
+    <option name="totallyTimeSpent" value="93956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
@@ -994,14 +1031,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -1203,6 +1232,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287012">
           <caret line="13046" column="36" selection-start-line="13046" selection-start-column="36" selection-end-line="13046" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1269,21 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/models/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#278#279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="com.vaadin.designer.intellij.htmlEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1302,6 +1317,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287276">
           <caret line="13058" column="1" selection-start-line="13058" selection-start-column="1" selection-end-line="13058" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,19 +1329,6 @@
             <element signature="e#616#617#0" expanded="true" />
             <element signature="e#652#653#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="com.vaadin.designer.intellij.htmlEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="com.vaadin.designer.intellij.htmlEditor">
@@ -1397,10 +1400,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/helpers/AddPopup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.vaadin.designer.intellij.htmlEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MySub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="255" column="48" selection-start-line="255" selection-start-column="42" selection-end-line="255" selection-end-column="48" />
+        <state relative-caret-position="242">
+          <caret line="261" column="5" selection-start-line="238" selection-start-column="4" selection-end-line="261" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.vaadin.designer.intellij.htmlEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/models/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="71" column="30" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="30" />
+          <folding>
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="com.vaadin.designer.intellij.htmlEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/test/MyUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="285" column="58" selection-start-line="285" selection-start-column="58" selection-end-line="285" selection-end-column="58" />
           <folding />
         </state>
       </provider>
