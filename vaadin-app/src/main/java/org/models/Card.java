@@ -134,4 +134,16 @@ public class Card
 	{
 		return subscribers.contains(user);
 	}
+	
+	public void sendNotifications(String notification)
+	{
+		if(!subscribers.isEmpty())
+		{
+			int n = subscribers.size();
+			for(int i=0;i<n;i++)
+			{
+				subscribers.get(i).addNotification(notification);
+			}
+		}
+	}
 }

@@ -97,20 +97,11 @@ public class RegisterPage extends UI
 			{
 				if(passwordField.getValue().equals(repeatPasswordField.getValue()))
 				{
-					boolean userExists = false;
-					
-					int n = User.users.size();
-					for(int i=0;i<n;i++)
-					{
-						if(User.users.get(i).username.equals(loginField.getValue()))
-							userExists = true;
-					}
-					
-					if(!userExists)
+					if(!User.userExists(loginField.getValue()))
 					{
 						User u = new User(loginField.getValue(), passwordField.getValue(), email.getValue());
 						User.users.add(u);
-						VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", u.username);
+						VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", u.getUsername());
 						getUI().getPage().setLocation("/");
 					} else
 						Notification.show("User exists!");

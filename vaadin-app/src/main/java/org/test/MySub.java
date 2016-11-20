@@ -229,6 +229,8 @@ public class MySub extends Window {
 				Comment comment = new Comment(user, commentValue);
 				comment.setCard(card);
 				
+				card.sendNotifications(user.getUsername() + " commented on " + card.getName());
+				
 				loadComments();
 			}
 		});
@@ -247,7 +249,7 @@ public class MySub extends Window {
 			VerticalLayout commentLayout = new VerticalLayout();
 				//commentLayout.setMargin(true);
 			
-				Label username = new Label("<b>" + comment.getAuthor().username + "</b> [ " 
+				Label username = new Label("<b>" + comment.getAuthor().getUsername() + "</b> [ " 
 				+ comment.getTime().toString() + " ]",ContentMode.HTML);
 				commentLayout.addComponent(username);
 				
@@ -349,6 +351,7 @@ public class MySub extends Window {
 							User u = User.findUser(popup.getName().getValue());
 							card.addMember(u);
 							card.addSubscriber(u);
+							u.addNotification(User.getUserFromSession().getUsername() + " added you to card " + card.getName());
 							popup.close();
 							refreshContent();
 						} else
@@ -371,7 +374,7 @@ public class MySub extends Window {
 		for(int i=0;i<n;i++)
 		{
 			final User u = card.getMember(i);
-			Button button = new Button(u.username);
+			Button button = new Button(u.getUsername());
 			button.addClickListener(new Button.ClickListener()
 			{
 				public void buttonClick(ClickEvent event)

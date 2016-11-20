@@ -6,9 +6,10 @@ import com.vaadin.server.VaadinService;
 public class User
 {
 	public static ArrayList<User> users;
-	public String username;
-	public String password;
-	public String mail;
+	private String username;
+	private String password;
+	private String mail;
+	private ArrayList<String> notifications = new ArrayList<String>();
 	
 	public User(String username, String password)
 	{
@@ -66,6 +67,51 @@ public class User
 	public static User getUserFromSession() throws NullPointerException
 	{
 		return findUser(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")));
+	}
+	
+	public String getUsername()
+	{
+		return username;
+	}
+	
+	public String getPassword()
+	{
+		return password;
+	}
+	
+	public void setPassword(String password)
+	{
+		this.password = password;
+	}
+	
+	public String getMail()
+	{
+		return mail;
+	}
+	
+	public void setMail(String mail)
+	{
+		this.mail = mail;
+	}
+	
+	public int getNotificationsSize()
+	{
+		return notifications.size();
+	}
+	
+	public String getNotification(int i)
+	{
+		return notifications.get(i);
+	}
+	
+	public void addNotification(String notification)
+	{
+		notifications.add(notification);
+	}
+	
+	public void removeNotification(String notification)
+	{
+		notifications.remove(notification);
 	}
 
 }

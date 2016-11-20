@@ -75,6 +75,14 @@ public class MyUI extends UI {
 
         TitleBarButton notificationButton = new TitleBarButton("",FontAwesome.BELL);
         titleBar.addElement(notificationButton.getButton(),0,0,29,29);
+		notificationButton.getButton().addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				NotificationsWindow nw = new NotificationsWindow(event);
+				UI.getCurrent().addWindow(nw);
+			}
+		});
 
 
 

@@ -89,7 +89,7 @@ public class LoginPage extends UI {
 				int n = User.users.size();
 				for(int i=0;i<n;i++)
 				{
-					if(User.users.get(i).username.equals(user.getValue()))
+					if(User.users.get(i).getUsername().equals(user.getValue()))
 						u = User.users.get(i);
 				}
 				
@@ -98,7 +98,7 @@ public class LoginPage extends UI {
 					Notification.show("User not found: "+user.getValue());
 				} else
 				{
-					if(password.getValue().equals(u.password))
+					if(password.getValue().equals(u.getPassword()))
 					{
 						VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", user.getValue());
 						getUI().getPage().setLocation("/");
