@@ -5,10 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.event.MouseEvents;
-import com.vaadin.server.FontAwesome;
-import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.VaadinService;
-import com.vaadin.server.VaadinServlet;
+import com.vaadin.server.*;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
@@ -143,6 +140,8 @@ public class MyUI extends UI {
 						x.setArchived(true);
 					}
 				});
+
+				addChangeNameButtonListener(b2,x);
 			
 			  //  tableLayout.setComponentAlignment(t, Alignment.TOP_CENTER);
 				tableLayout.setExpandRatio(v, 1.0f);
@@ -204,6 +203,8 @@ public class MyUI extends UI {
 								tableLayout.removeComponent(v);
 							}
 						});
+
+						addChangeNameButtonListener(b2,l);
 
 					}
 				});
@@ -283,7 +284,31 @@ public class MyUI extends UI {
 			}
 		});
 	}
-	
+
+	void addChangeNameButtonListener(Button button, List list)
+	{
+		button.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				AddPopup popup = new AddPopup("Change list name");
+				UI.getCurrent().addWindow(popup);
+
+				popup.getAddButton().addClickListener(new Button.ClickListener()
+				{
+					@Override
+					public void buttonClick(Button.ClickEvent event)
+					{
+						list.setName(popup.getName().getValue());
+						popup.close();
+						Page.getCurrent().reload();
+					}
+				});
+
+			}
+		});
+	}
+
 	void loadUsernameAndBoard()
 	{
 		username = String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"));
