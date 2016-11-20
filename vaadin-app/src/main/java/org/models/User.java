@@ -10,6 +10,7 @@ public class User
 	private String password;
 	private String mail;
 	private ArrayList<String> notifications = new ArrayList<String>();
+	private ArrayList<Board> favouritedBoards = new ArrayList<Board>();
 	
 	public User(String username, String password)
 	{
@@ -114,6 +115,10 @@ public class User
 		notifications.remove(notification);
 	}
 
+	public ArrayList<Board> getFavouritedBoards()
+	{
+		return favouritedBoards;
+	}
 }
 
 

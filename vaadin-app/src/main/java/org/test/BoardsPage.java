@@ -65,6 +65,14 @@ public class BoardsPage extends UI
 
         TitleBarButton notificationButton = new TitleBarButton("",FontAwesome.BELL);
         titleBar.addElement(notificationButton.getButton(),0,0,29,29);
+		notificationButton.getButton().addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				NotificationsWindow nw = new NotificationsWindow(event);
+				UI.getCurrent().addWindow(nw);
+			}
+		});
 		
 		Board.testBoard();
 		
@@ -95,7 +103,7 @@ public class BoardsPage extends UI
                 popup.getAddButton().addClickListener(new Button.ClickListener() {
                     @Override
                     public void buttonClick(Button.ClickEvent event) {
-                        Board b = new Board(popup.getName().getValue());
+                        Board b = new Board(popup.getName().getValue(), User.getUserFromSession());
                         BoardControl board = new BoardControl(b);
                         board.GetDeleteButton().addClickListener(new Button.ClickListener() {
                             @Override

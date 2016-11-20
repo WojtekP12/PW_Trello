@@ -231,7 +231,7 @@ public class MySub extends Window {
 				Comment comment = new Comment(user, commentValue);
 				comment.setCard(card);
 				
-				card.sendNotifications(user.getUsername() + " commented on " + card.getName());
+				card.sendNotifications(user.getUsername() + " commented on " + card.getName(), user);
 
 				loadComments();
 			}
