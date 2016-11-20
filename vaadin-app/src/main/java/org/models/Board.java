@@ -19,6 +19,7 @@ public class Board
 	private ArrayList<User> admins = new ArrayList<User>();
 	
 	private BoardPrivacy privacy;
+	private Team team;
 	
 	public enum BoardPrivacy
 	{
@@ -129,6 +130,16 @@ public class Board
 	public void changePrivacy(BoardPrivacy newPrivacy)
 	{
 		this.privacy = newPrivacy;
+	}
+	
+	public Team getTeam()
+	{
+		return team;
+	}
+	
+	public void setTeam(Team t)
+	{
+		this.team = t;
 	}
 	
 	

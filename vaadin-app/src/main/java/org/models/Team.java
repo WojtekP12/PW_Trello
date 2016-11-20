@@ -27,5 +27,10 @@ public class Team
 		return admins;
 	}
 	
+	public String getName()
+	{
+		return name;
+	}
+	
 	
 }

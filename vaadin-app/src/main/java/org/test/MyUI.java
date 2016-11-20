@@ -82,7 +82,7 @@ public class MyUI extends UI {
 		});
 
 
-
+		layout.addElement(nameBar());
 
 
         // *********listy*********
@@ -312,8 +312,8 @@ public class MyUI extends UI {
 	void loadUsernameAndBoard()
 	{
 		username = String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"));
-		/*if(username == "null")
-			getUI().getPage().setLocation("/HomePage");*/
+		if(username == "null")
+			getUI().getPage().setLocation("/HomePage");
 		
 		Board.testBoard();
 		User.testUsers();
@@ -339,5 +339,52 @@ public class MyUI extends UI {
 		}
 		
 		
-	}	
+	}
+
+	HorizontalLayout nameBar()
+	{
+		HorizontalLayout layout = new HorizontalLayout();
+			layout.setMargin(true);
+			layout.setSpacing(true);
+			
+		Button nameButton = new Button(board.name);
+		layout.addComponent(nameButton);
+		
+		if(board.getPrivacy()==Board.BoardPrivacy.TEAM)
+		{
+			Button teamButton = new Button(board.getTeam().getName());
+			layout.addComponent(teamButton);
+		}
+		
+		Button favouriteButton;
+		if(User.getUserFromSession().getFavouritedBoards().contains(board))
+		{
+			favouriteButton = new Button("",FontAwesome.STAR);
+		}
+		else
+		{
+			favouriteButton = new Button("",FontAwesome.STAR_O);
+		}
+		layout.addComponent(favouriteButton);
+		
+		Button privacyButton;
+		switch(board.getPrivacy())
+		{
+			case PUBLIC:
+				privacyButton = new Button("Public",FontAwesome.UNLOCK);
+				break;
+			case PRIVATE:
+				privacyButton = new Button("Private",FontAwesome.LOCK);
+				break;
+			case TEAM:
+				privacyButton = new Button("Team",FontAwesome.CUBES);
+				break;
+			default:
+				privacyButton = new Button();
+				break;
+		}
+		layout.addComponent(privacyButton);
+		
+		return layout;
+	}
 }
