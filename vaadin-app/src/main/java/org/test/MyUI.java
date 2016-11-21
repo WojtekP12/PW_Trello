@@ -360,10 +360,32 @@ public class MyUI extends UI {
 		if(User.getUserFromSession().getFavouritedBoards().contains(board))
 		{
 			favouriteButton = new Button("",FontAwesome.STAR);
+			favouriteButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					User user = User.getUserFromSession();
+					
+					board.getFavourited().remove(user);
+					user.getFavouritedBoards().remove(board);
+					Page.getCurrent().reload();
+				}
+			});
 		}
 		else
 		{
 			favouriteButton = new Button("",FontAwesome.STAR_O);
+			favouriteButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					User user = User.getUserFromSession();
+					
+					board.getFavourited().add(user);
+					user.getFavouritedBoards().add(board);
+					Page.getCurrent().reload();
+				}
+			});
 		}
 		layout.addComponent(favouriteButton);
 		
@@ -384,14 +406,15 @@ public class MyUI extends UI {
 				break;
 		}
 		layout.addComponent(privacyButton);
-		privacyButton.addClickListener(new Button.ClickListener()
-		{
-			public void buttonClick(ClickEvent event)
+		if(board.getAdmins().contains(User.getUserFromSession()))
+			privacyButton.addClickListener(new Button.ClickListener()
 			{
-				PrivacyWindow pw = new PrivacyWindow(event, board);
-				UI.getCurrent().addWindow(pw);
-			}
-		});
+				public void buttonClick(ClickEvent event)
+				{
+					PrivacyWindow pw = new PrivacyWindow(event, board);
+					UI.getCurrent().addWindow(pw);
+				}
+			});
 		
 		return layout;
 	}
