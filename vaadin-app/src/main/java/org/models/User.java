@@ -37,6 +37,9 @@ public class User
 			users.add(new User("user4", "12345"));
 			users.add(new User("user5", "12345"));
 			users.add(new User("user6", "12345"));	
+			
+			Team.teamsList.add(new Team("Test team 1", findUser("user1")));
+			Team.teamsList.add(new Team("Test team 2", findUser("user1")));
 		}
 	}
 	

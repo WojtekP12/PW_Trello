@@ -31,6 +31,4 @@ public class Team
 	{
 		return name;
 	}
-	
-	
 }

@@ -384,6 +384,14 @@ public class MyUI extends UI {
 				break;
 		}
 		layout.addComponent(privacyButton);
+		privacyButton.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				PrivacyWindow pw = new PrivacyWindow(event, board);
+				UI.getCurrent().addWindow(pw);
+			}
+		});
 		
 		return layout;
 	}

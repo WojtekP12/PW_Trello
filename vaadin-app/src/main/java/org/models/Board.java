@@ -129,7 +129,7 @@ public class Board
 	
 	public void changePrivacy(BoardPrivacy newPrivacy)
 	{
-		this.privacy = newPrivacy;
+		this.privacy = newPrivacy;	
 	}
 	
 	public Team getTeam()
