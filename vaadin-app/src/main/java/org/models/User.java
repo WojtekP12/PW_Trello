@@ -40,6 +40,7 @@ public class User
 			
 			Team.teamsList.add(new Team("Test team 1", findUser("user1")));
 			Team.teamsList.add(new Team("Test team 2", findUser("user1")));
+			Team.teamsList.get(0).getMembers().add(findUser("user2"));
 		}
 	}
 	

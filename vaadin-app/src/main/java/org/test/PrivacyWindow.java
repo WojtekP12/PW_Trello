@@ -97,7 +97,10 @@ public class PrivacyWindow extends Window
 				{
 					public void buttonClick(ClickEvent event)
 					{
+						if(board.getPrivacy() == Board.BoardPrivacy.TEAM)
+							board.getTeam().getBoards().remove(board);
 						board.setTeam(T);
+						T.getBoards().add(board);
 						changePrivacyToTeam();
 						Page.getCurrent().reload();
 					}

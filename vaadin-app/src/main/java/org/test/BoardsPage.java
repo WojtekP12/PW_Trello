@@ -150,8 +150,24 @@ public class BoardsPage extends UI
 			}
 		}
 		
-			boardContainersList.addComponent(publicContainer);
-			boardContainersList.addComponent(privateContainer);
+		boardContainersList.addComponent(publicContainer);
+		boardContainersList.addComponent(privateContainer);
+		
+		n = Team.teamsList.size();
+		for(int i=0;i<n;i++)
+		{
+			final Team T = Team.teamsList.get(i);
+			if(T.getMembers().contains(user))
+			{
+				TeamBoardContainer teamBoardContainer = new TeamBoardContainer(T);
+				int m = T.getBoards().size();
+				for(int j=0;j<m;j++)
+				{
+					teamBoardContainer.addBoardToContainer(T.getBoards().get(j));
+				}
+				boardContainersList.addComponent(teamBoardContainer);
+			}
+		}
 
 
 		boardContainersList.setSpacing(true);

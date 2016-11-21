@@ -9,7 +9,8 @@ public class Team
 	private String name;
 	private ArrayList<User> members = new ArrayList<User>();
 	private ArrayList<User> admins = new ArrayList<User>();
-
+	private ArrayList<Board> boards = new ArrayList<Board>();
+	
 	public Team(String name, User user)
 	{
 		this.name = name;
@@ -30,5 +31,10 @@ public class Team
 	public String getName()
 	{
 		return name;
+	}
+	
+	public ArrayList<Board> getBoards()
+	{
+		return boards;
 	}
 }

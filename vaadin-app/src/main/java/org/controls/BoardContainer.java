@@ -37,10 +37,24 @@ public class BoardContainer extends VerticalLayout
                 @Override
                 public void buttonClick(ClickEvent event) {
                     boardsContainer.removeComponent(boardControl.getBoard());
+					if(board.getPrivacy() == Board.BoardPrivacy.TEAM)
+						board.getTeam().getBoards().remove(board);
+					int n = board.getFavourited().size();
+					for(int i=0;i<n;i++)
+					{
+						board.getFavourited().get(i).getFavouritedBoards().remove(board);
+					}
+					
                     Board.boardsList.remove(board);
+					
                 }
             });
 		boardsContainer.addComponent(boardControl.getBoard());
+	}
+	
+	public HorizontalLayout getTitleBar()
+	{
+		return titleBar;
 	}
 	
 	
