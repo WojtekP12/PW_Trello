@@ -1,5 +1,6 @@
 package org.test;
 
+import java.util.ArrayList;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Window;
@@ -10,7 +11,6 @@ import com.vaadin.server.Page;
 import org.models.Board;
 import org.models.User;
 import org.models.Team;
-
 
 public class PrivacyWindow extends Window
 {
@@ -117,11 +117,100 @@ public class PrivacyWindow extends Window
 	void changePrivacyToPrivate()
 	{
 		board.changePrivacy(Board.BoardPrivacy.PRIVATE);
+		
+		//Usuń z ulubionych jeżeli użytkownik nie jest członkiem tablicy
+		ArrayList<User> toRemoveFromFavourites = new ArrayList<User>();
+		
+		int n = board.getFavourited().size();
+		for(int i=0;i<n;i++)
+		{
+			if(!board.getMembers().contains(board.getFavourited().get(i)))
+				toRemoveFromFavourites.add(board.getFavourited().get(i));
+		}
+		
+		n = toRemoveFromFavourites.size();
+		for(int i=0;i<n;i++)
+		{
+			User u = toRemoveFromFavourites.get(i);
+			
+			board.getFavourited().remove(u);
+			u.getFavouritedBoards().remove(board);
+		}
+		
+		//Usuń z subskrybcji jeżeli użytkownik nie jest członkiem tablicy
+		ArrayList<User> toRemoveFromSubscribers = new ArrayList<User>();
+		
+		n = board.getSubscribers().size();
+		for(int i=0;i<n;i++)
+		{
+			if(!board.getMembers().contains(board.getSubscribers().get(i)))
+				toRemoveFromSubscribers.add(board.getSubscribers().get(i));
+		}
+		
+		n = toRemoveFromSubscribers.size();
+		for(int i=0;i<n;i++)
+		{
+			board.getSubscribers().remove(toRemoveFromSubscribers.get(i));
+		}
+		
+		
+		
 	}
 	
 	void changePrivacyToTeam()
 	{
 		board.changePrivacy(Board.BoardPrivacy.TEAM);
+		
+		//Usuń z członków tablicy jeżeli użytkownik nie jest członkiem teamu
+		ArrayList<User> toRemoveFromMembers = new ArrayList<User>();
+		
+		int n = board.getMembers().size();
+		for(int i=0;i<n;i++)
+		{
+			if(!board.getTeam().getMembers().contains(board.getMembers().get(i)))
+				toRemoveFromMembers.add(board.getMembers().get(i));
+		}
+		
+		n = toRemoveFromMembers.size();
+		for(int i=0;i<n;i++)
+		{
+			board.getMembers().remove(toRemoveFromMembers.get(i));
+		}
+		
+		//Usuń z ulubionych jeżeli użytkownik nie jest członkiem teamu
+		ArrayList<User> toRemoveFromFavourites = new ArrayList<User>();
+		
+		n = board.getFavourited().size();
+		for(int i=0;i<n;i++)
+		{
+			if(!board.getTeam().getMembers().contains(board.getFavourited().get(i)))
+				toRemoveFromFavourites.add(board.getFavourited().get(i));
+		}
+		
+		n = toRemoveFromFavourites.size();
+		for(int i=0;i<n;i++)
+		{
+			User u = toRemoveFromFavourites.get(i);
+			
+			board.getFavourited().remove(u);
+			u.getFavouritedBoards().remove(board);
+		}
+		
+		//Usuń z subskrybcji jeżeli użytkownik nie jest członkiem teamu
+		ArrayList<User> toRemoveFromSubscribers = new ArrayList<User>();
+		
+		n = board.getSubscribers().size();
+		for(int i=0;i<n;i++)
+		{
+			if(!board.getTeam().getMembers().contains(board.getSubscribers().get(i)))
+				toRemoveFromSubscribers.add(board.getSubscribers().get(i));
+		}
+		
+		n = toRemoveFromSubscribers.size();
+		for(int i=0;i<n;i++)
+		{
+			board.getSubscribers().remove(toRemoveFromSubscribers.get(i));
+		}
 	}
 
 }
