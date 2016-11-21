@@ -32,7 +32,7 @@ public class Board
 		this.id = cID;
 		cID++;
 		boardsList.add(this);
-		this.privacy = BoardPrivacy.PUBLIC;
+		this.privacy = BoardPrivacy.PRIVATE;
 		this.members.add(user);
 		this.admins.add(user);
 	}

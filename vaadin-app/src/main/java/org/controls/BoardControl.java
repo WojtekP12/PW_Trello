@@ -44,8 +44,10 @@ public class BoardControl
 				boardButton.getUI().getPage().setLocation("/");
 			}
 		});
-
-        deleteButton = new Button(FontAwesome.CLOSE);
+		
+		deleteButton = new Button(FontAwesome.CLOSE);
+		if(!b.getAdmins().contains(User.getUserFromSession()))
+			deleteButton.setVisible(false);
 
         HorizontalLayout h = new HorizontalLayout(boardButton,deleteButton);
 
