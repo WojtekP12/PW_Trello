@@ -168,6 +168,27 @@ public class BoardsPage extends UI
 				boardContainersList.addComponent(teamBoardContainer);
 			}
 		}
+		
+		Button createTeamButton = new Button("Create new team");
+		boardContainersList.addComponent(createTeamButton);
+		createTeamButton.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				AddPopup popup = new AddPopup("Create new team");
+				UI.getCurrent().addWindow(popup);
+				
+				popup.getAddButton().addClickListener(new Button.ClickListener()
+				{
+					public void buttonClick(ClickEvent event)
+					{
+						Team team = new Team(popup.getName().getValue(),user);
+						Team.teamsList.add(team);
+						Page.getCurrent().reload();
+					}
+				});
+			}
+		});
 
 
 		boardContainersList.setSpacing(true);

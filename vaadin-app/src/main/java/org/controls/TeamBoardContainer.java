@@ -36,7 +36,7 @@ public class TeamBoardContainer extends BoardContainer
 			{
 				User user = User.getUserFromSession();
 				
-				team.getMembers().remove(user));				
+				team.getMembers().remove(user);				
 				if(team.getAdmins().contains(user))
 					team.getAdmins().remove(user);
 				if(team.getAdmins().isEmpty())
