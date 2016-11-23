@@ -101,7 +101,7 @@ public class LoginPage extends UI {
 					if(password.getValue().equals(u.getPassword()))
 					{
 						VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", user.getValue());
-						getUI().getPage().setLocation("/");
+						getUI().getPage().setLocation("/BoardsPage");
 					} else
 					{
 						Notification.show("Wrong password!");

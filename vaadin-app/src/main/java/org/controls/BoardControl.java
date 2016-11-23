@@ -41,11 +41,13 @@ public class BoardControl
 			public void buttonClick(ClickEvent event)
 			{
 				VaadinService.getCurrentRequest().getWrappedSession().setAttribute("board", b.id);
-				boardButton.getUI().getPage().setLocation("/");
+				boardButton.getUI().getPage().setLocation("/BoardView");
 			}
 		});
-
-        deleteButton = new Button(FontAwesome.CLOSE);
+		
+		deleteButton = new Button(FontAwesome.CLOSE);
+		if(!b.getAdmins().contains(User.getUserFromSession()))
+			deleteButton.setVisible(false);
 
         HorizontalLayout h = new HorizontalLayout(boardButton,deleteButton);
 

@@ -10,6 +10,7 @@ public class User
 	private String password;
 	private String mail;
 	private ArrayList<String> notifications = new ArrayList<String>();
+	private ArrayList<Board> favouritedBoards = new ArrayList<Board>();
 	
 	public User(String username, String password)
 	{
@@ -36,6 +37,10 @@ public class User
 			users.add(new User("user4", "12345"));
 			users.add(new User("user5", "12345"));
 			users.add(new User("user6", "12345"));	
+			
+			Team.teamsList.add(new Team("Test team 1", findUser("user1")));
+			Team.teamsList.add(new Team("Test team 2", findUser("user1")));
+			Team.teamsList.get(0).getMembers().add(findUser("user2"));
 		}
 	}
 	
@@ -114,6 +119,10 @@ public class User
 		notifications.remove(notification);
 	}
 
+	public ArrayList<Board> getFavouritedBoards()
+	{
+		return favouritedBoards;
+	}
 }
 
 

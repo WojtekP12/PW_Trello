@@ -82,7 +82,7 @@ public class MyUI extends UI {
 		});
 
 
-
+		layout.addElement(nameBar());
 
 
         // *********listy*********
@@ -114,7 +114,7 @@ public class MyUI extends UI {
 									c.setList(x);
 								x.addCard(c);
 								popup.close();
-								getUI().getPage().setLocation("/"); //*****
+								getUI().getPage().reload(); //*****
 							}
 						});
 
@@ -178,7 +178,7 @@ public class MyUI extends UI {
 											c.setList(l);
 										l.addCard(c);
 										popup.close();
-										getUI().getPage().setLocation("/"); //*****
+										getUI().getPage().reload(); //*****
 									}
 								});
 
@@ -231,7 +231,7 @@ public class MyUI extends UI {
         setContent(layout.getContainer());
     }
 
-    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "BoardView/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }
@@ -312,8 +312,8 @@ public class MyUI extends UI {
 	void loadUsernameAndBoard()
 	{
 		username = String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user"));
-		/*if(username == "null")
-			getUI().getPage().setLocation("/HomePage");*/
+		if(username == "null")
+			getUI().getPage().setLocation("/HomePage");
 		
 		Board.testBoard();
 		User.testUsers();
@@ -339,5 +339,104 @@ public class MyUI extends UI {
 		}
 		
 		
-	}	
+	}
+
+	HorizontalLayout nameBar()
+	{
+		HorizontalLayout layout = new HorizontalLayout();
+			layout.setMargin(true);
+			layout.setSpacing(true);
+			
+		Button nameButton = new Button(board.name);
+		layout.addComponent(nameButton);
+		if(board.getAdmins().contains(User.getUserFromSession()))
+		{
+			nameButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					AddPopup popup = new AddPopup("Change board name");
+					UI.getCurrent().addWindow(popup);
+
+					popup.getAddButton().addClickListener(new Button.ClickListener()
+					{
+						public void buttonClick(ClickEvent event)
+						{
+							board.name = popup.getName().getValue();
+							popup.close();
+							Page.getCurrent().reload();
+						}
+					});
+				}
+			});
+		}
+		
+		if(board.getPrivacy()==Board.BoardPrivacy.TEAM)
+		{
+			Button teamButton = new Button(board.getTeam().getName());
+			layout.addComponent(teamButton);
+		}
+		
+		Button favouriteButton;
+		if(User.getUserFromSession().getFavouritedBoards().contains(board))
+		{
+			favouriteButton = new Button("",FontAwesome.STAR);
+			favouriteButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					User user = User.getUserFromSession();
+					
+					board.getFavourited().remove(user);
+					user.getFavouritedBoards().remove(board);
+					Page.getCurrent().reload();
+				}
+			});
+		}
+		else
+		{
+			favouriteButton = new Button("",FontAwesome.STAR_O);
+			favouriteButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					User user = User.getUserFromSession();
+					
+					board.getFavourited().add(user);
+					user.getFavouritedBoards().add(board);
+					Page.getCurrent().reload();
+				}
+			});
+		}
+		layout.addComponent(favouriteButton);
+		
+		Button privacyButton;
+		switch(board.getPrivacy())
+		{
+			case PUBLIC:
+				privacyButton = new Button("Public",FontAwesome.UNLOCK);
+				break;
+			case PRIVATE:
+				privacyButton = new Button("Private",FontAwesome.LOCK);
+				break;
+			case TEAM:
+				privacyButton = new Button("Team",FontAwesome.CUBES);
+				break;
+			default:
+				privacyButton = new Button();
+				break;
+		}
+		layout.addComponent(privacyButton);
+		if(board.getAdmins().contains(User.getUserFromSession()))
+			privacyButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					PrivacyWindow pw = new PrivacyWindow(event, board);
+					UI.getCurrent().addWindow(pw);
+				}
+			});
+		
+		return layout;
+	}
 }

@@ -1,7 +1,6 @@
 package org.models;
 
 import java.util.ArrayList;
-import org.models.User;
 
 public class Card 
 {
@@ -140,14 +139,15 @@ public class Card
 		return subscribers.contains(user);
 	}
 	
-	public void sendNotifications(String notification)
+	public void sendNotifications(String notification, User excluded)
 	{
 		if(!subscribers.isEmpty())
 		{
 			int n = subscribers.size();
 			for(int i=0;i<n;i++)
 			{
-				subscribers.get(i).addNotification(notification);
+				if(subscribers.get(i)!=excluded)
+					subscribers.get(i).addNotification(notification);
 			}
 		}
 	}

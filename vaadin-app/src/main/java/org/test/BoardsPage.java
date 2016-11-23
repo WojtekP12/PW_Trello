@@ -10,11 +10,15 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.server.Page;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.*;
 import org.controls.*;
 import org.helpers.AddPopup;
 import org.models.*;
+import org.models.User;
+import org.controls.BoardContainer;
+
 
 import javax.servlet.annotation.WebServlet;
 
@@ -46,6 +50,35 @@ public class BoardsPage extends UI
         titleBar.addElement(titleLabel.getTitleLabel(),0,0,6,23);
 
         TitleBarButton addButton = new TitleBarButton("",FontAwesome.PLUS);
+		addButton.getButton().addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                AddPopup popup = new AddPopup("Add Board");
+                UI.getCurrent().addWindow(popup);
+                popup.getAddButton().addClickListener(new Button.ClickListener() {
+                    @Override
+                    public void buttonClick(Button.ClickEvent event) {
+                        Board b = new Board(popup.getName().getValue(), User.getUserFromSession());
+                        /*BoardControl board = new BoardControl(b);
+                        board.GetDeleteButton().addClickListener(new Button.ClickListener() {
+                            @Override
+                            public void buttonClick(ClickEvent event) {
+
+                                boardList.removeComponent(board.getBoard());
+                                h.removeComponent(board.getBoard());
+                                Board.boardsList.remove(b);
+                            }
+                        });
+
+                        h.addComponent(board.getBoard());
+                        boardList.addComponent(h);*/
+                        popup.close();
+						Page.getCurrent().reload();
+                    }
+                });
+
+            }
+        });
 
         titleBar.addElement(addButton.getButton(),0,0,24,24);
 		
@@ -65,65 +98,103 @@ public class BoardsPage extends UI
 
         TitleBarButton notificationButton = new TitleBarButton("",FontAwesome.BELL);
         titleBar.addElement(notificationButton.getButton(),0,0,29,29);
+		notificationButton.getButton().addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				NotificationsWindow nw = new NotificationsWindow(event);
+				UI.getCurrent().addWindow(nw);
+			}
+		});
 		
 		Board.testBoard();
+				
+		VerticalLayout boardContainersList = new VerticalLayout();
 		
-		HorizontalLayout boardList = new HorizontalLayout();
+		User user = User.getUserFromSession();
+		
+		if(!user.getFavouritedBoards().isEmpty())
+		{
+			BoardContainer favouritesContainer = new BoardContainer("Favourites");
+			
+			int n = user.getFavouritedBoards().size();
+			for(int i=0;i<n;i++)
+			{
+				final Board B = user.getFavouritedBoards().get(i);
+				favouritesContainer.addBoardToContainer(B);
+			}
+			
+			boardContainersList.addComponent(favouritesContainer);
+		}
+		
+		BoardContainer publicContainer = new BoardContainer("Public");
+		BoardContainer privateContainer = new BoardContainer("Private");
 		
 		int n = Board.boardsList.size();
 		for(int i=0;i<n;i++)
 		{
-            final Board b = Board.boardsList.get(i);
-			BoardControl board = new BoardControl(b);
-            board.GetDeleteButton().addClickListener(new Button.ClickListener() {
-                @Override
-                public void buttonClick(ClickEvent event) {
-
-                    boardList.removeComponent(board.getBoard());
-                    Board.boardsList.remove(b);
-                }
-            });
-			boardList.addComponent(board.getBoard());
+			final Board B = Board.boardsList.get(i);
+			switch(B.getPrivacy())
+			{
+				case PUBLIC:
+					publicContainer.addBoardToContainer(B);
+					break;
+				case PRIVATE:
+					if(B.getMembers().contains(user))
+						privateContainer.addBoardToContainer(B);
+					break;
+				case TEAM:
+					break;
+				default:
+					break;
+			}
 		}
+		
+		boardContainersList.addComponent(publicContainer);
+		boardContainersList.addComponent(privateContainer);
+		
+		n = Team.teamsList.size();
+		for(int i=0;i<n;i++)
+		{
+			final Team T = Team.teamsList.get(i);
+			if(T.getMembers().contains(user))
+			{
+				TeamBoardContainer teamBoardContainer = new TeamBoardContainer(T);
+				int m = T.getBoards().size();
+				for(int j=0;j<m;j++)
+				{
+					teamBoardContainer.addBoardToContainer(T.getBoards().get(j));
+				}
+				boardContainersList.addComponent(teamBoardContainer);
+			}
+		}
+		
+		Button createTeamButton = new Button("Create new team");
+		boardContainersList.addComponent(createTeamButton);
+		createTeamButton.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				AddPopup popup = new AddPopup("Create new team");
+				UI.getCurrent().addWindow(popup);
+				
+				popup.getAddButton().addClickListener(new Button.ClickListener()
+				{
+					public void buttonClick(ClickEvent event)
+					{
+						Team team = new Team(popup.getName().getValue(),user);
+						Team.teamsList.add(team);
+						Page.getCurrent().reload();
+					}
+				});
+			}
+		});
 
-        addButton.getButton().addClickListener(new Button.ClickListener() {
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                AddPopup popup = new AddPopup("Add Board");
-                UI.getCurrent().addWindow(popup);
-                HorizontalLayout h = new HorizontalLayout();
-                popup.getAddButton().addClickListener(new Button.ClickListener() {
-                    @Override
-                    public void buttonClick(Button.ClickEvent event) {
-                        Board b = new Board(popup.getName().getValue());
-                        BoardControl board = new BoardControl(b);
-                        board.GetDeleteButton().addClickListener(new Button.ClickListener() {
-                            @Override
-                            public void buttonClick(ClickEvent event) {
 
-                                boardList.removeComponent(board.getBoard());
-                                h.removeComponent(board.getBoard());
-                                Board.boardsList.remove(b);
-                            }
-                        });
-
-                        h.addComponent(board.getBoard());
-                        boardList.addComponent(h);
-
-                        popup.close();
-                    }
-                });
-
-            }
-        });
-                
-        boardList.setSpacing(true);
-        VerticalLayout childLayout = new VerticalLayout(boardList);
-        childLayout.setComponentAlignment(boardList,Alignment.MIDDLE_CENTER);
-
-        layout.addElement(childLayout);
-        layout.getContainer().setExpandRatio(childLayout,0.8f);
-
+		boardContainersList.setSpacing(true);
+		boardContainersList.setMargin(true);
+		layout.addElement(boardContainersList);
+		layout.getContainer().setExpandRatio(boardContainersList,0.8f);
     }
 
     @WebServlet(urlPatterns = "BoardsPage/*", name = "BoardsPageServlet", asyncSupported = true)
