@@ -8,11 +8,14 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.server.VaadinService;
 import org.helpers.AddPopup;
+import org.helpers.CalendarPopup;
 import org.models.Card;
 import org.models.List;
 import org.models.User;
 import org.models.Comment;
 
+
+import java.util.Date;
 
 import static com.vaadin.server.FontAwesome.BOLD;
 
@@ -105,7 +108,8 @@ public class MySub extends Window {
         rightMenu.addComponent(taskListButton);
 
         Button termsButton = new Button("Termin");
-        rightMenu.addComponent(membersButton);
+        rightMenu.addComponent(termsButton);
+		addTermButtonClickListener(termsButton);
 
         Button attatchmentButton = new Button("Załącznik");
         rightMenu.addComponent(attatchmentButton);
@@ -202,7 +206,19 @@ public class MySub extends Window {
 		addCommentButtonListener();
 
     }
-    public void setCard(Card card) {this.card = card; }
+
+	private void addTermButtonClickListener(Button termsButton) {
+		termsButton.addClickListener(new Button.ClickListener()
+		{
+			public void buttonClick(ClickEvent event)
+			{
+				CalendarPopup popup = new CalendarPopup("Calendar");
+				UI.getCurrent().addWindow(popup);
+			}
+		});
+	}
+
+	public void setCard(Card card) {this.card = card; }
 
     public Card getCard() {return this.card; }
 
