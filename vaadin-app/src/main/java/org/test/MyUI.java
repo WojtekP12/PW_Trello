@@ -349,6 +349,27 @@ public class MyUI extends UI {
 			
 		Button nameButton = new Button(board.name);
 		layout.addComponent(nameButton);
+		if(board.getAdmins().contains(User.getUserFromSession()))
+		{
+			nameButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					AddPopup popup = new AddPopup("Change board name");
+					UI.getCurrent().addWindow(popup);
+
+					popup.getAddButton().addClickListener(new Button.ClickListener()
+					{
+						public void buttonClick(ClickEvent event)
+						{
+							board.name = popup.getName().getValue();
+							popup.close();
+							Page.getCurrent().reload();
+						}
+					});
+				}
+			});
+		}
 		
 		if(board.getPrivacy()==Board.BoardPrivacy.TEAM)
 		{
