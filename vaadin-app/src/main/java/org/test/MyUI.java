@@ -114,7 +114,7 @@ public class MyUI extends UI {
 									c.setList(x);
 								x.addCard(c);
 								popup.close();
-								getUI().getPage().setLocation("/"); //*****
+								getUI().getPage().reload(); //*****
 							}
 						});
 
@@ -178,7 +178,7 @@ public class MyUI extends UI {
 											c.setList(l);
 										l.addCard(c);
 										popup.close();
-										getUI().getPage().setLocation("/"); //*****
+										getUI().getPage().reload(); //*****
 									}
 								});
 
@@ -231,7 +231,7 @@ public class MyUI extends UI {
         setContent(layout.getContainer());
     }
 
-    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "BoardView/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }

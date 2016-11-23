@@ -41,7 +41,7 @@ public class BoardControl
 			public void buttonClick(ClickEvent event)
 			{
 				VaadinService.getCurrentRequest().getWrappedSession().setAttribute("board", b.id);
-				boardButton.getUI().getPage().setLocation("/");
+				boardButton.getUI().getPage().setLocation("/BoardView");
 			}
 		});
 		

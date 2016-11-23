@@ -3,6 +3,7 @@ package org.test;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.FontAwesome;
+import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
@@ -40,6 +41,8 @@ public class HomePage extends UI{
 		
 		addButtonClickListeners(loginButton.getButton(), registerButton.getButton());
 
+		if(String.valueOf(VaadinService.getCurrentRequest().getWrappedSession().getAttribute("user")) != "null")
+			getUI().getPage().setLocation("/BoardsPage");
 
         Label welcome = new Label("WELCOME IN TRELLO");
         welcome.addStyleName("titleBarLabelStyle");
@@ -48,7 +51,7 @@ public class HomePage extends UI{
 
     }
 
-    @WebServlet(urlPatterns = "HomePage/*", name = "HomePageServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/*", name = "HomePageServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = HomePage.class, productionMode = false)
     public static class HomePageServlet extends VaadinServlet {
     }

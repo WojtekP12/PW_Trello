@@ -102,7 +102,7 @@ public class RegisterPage extends UI
 						User u = new User(loginField.getValue(), passwordField.getValue(), email.getValue());
 						User.users.add(u);
 						VaadinService.getCurrentRequest().getWrappedSession().setAttribute("user", u.getUsername());
-						getUI().getPage().setLocation("/");
+						getUI().getPage().setLocation("/BoardsPage");
 					} else
 						Notification.show("User exists!");
 					
