@@ -113,6 +113,8 @@ public class MyUI extends UI {
 								Card c = new Card(popup.getName().getValue());
 									c.setList(x);
 								x.addCard(c);
+								board.logActivity(username+" added card " + c.getName() + ".");
+								board.sendNotifications(username+" added card " + c.getName(), User.getUserFromSession());
 								popup.close();
 								getUI().getPage().reload(); //*****
 							}
@@ -138,6 +140,8 @@ public class MyUI extends UI {
 					public void buttonClick(ClickEvent event) {
 						tableLayout.removeComponent(v);
 						x.setArchived(true);
+						board.logActivity(username + " archived list" + x.getName() + ".");
+						board.sendNotifications(username+" archived list " + x.getName(), User.getUserFromSession());
 					}
 				});
 
@@ -160,6 +164,8 @@ public class MyUI extends UI {
 						List l = new List(popup.getName().getValue());
 							l.setBoard(board);
 						board.addList(l);
+						board.logActivity(username+" added list " + l.getName() + ".");
+						board.sendNotifications(username+" added list " + l.getName(), User.getUserFromSession());
 						popup.close();
 
 						Button b = new Button(FontAwesome.PLUS);
@@ -177,6 +183,8 @@ public class MyUI extends UI {
 										Card c = new Card(popup.getName().getValue());
 											c.setList(l);
 										l.addCard(c);
+										board.logActivity(username+" added card " + c.getName() + ".");
+										board.sendNotifications(username+" added card " + c.getName(), User.getUserFromSession());
 										popup.close();
 										getUI().getPage().reload(); //*****
 									}

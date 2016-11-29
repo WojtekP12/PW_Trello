@@ -2,12 +2,15 @@ package org.test;
 
 import com.vaadin.ui.Window;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Label;
+import com.vaadin.shared.ui.label.ContentMode;
 import org.models.User;
 import org.models.Board;
 import org.helpers.AddPopup;
@@ -24,6 +27,8 @@ public class BoardMenuWindow extends Window
 		this.board = board;
 		this.content = new VerticalLayout();
 		
+		this.setWidth("500px");
+		
 		content.setMargin(true);
 		content.setSpacing(true);
 		
@@ -34,6 +39,11 @@ public class BoardMenuWindow extends Window
 	void init()
 	{
 		content.addComponent(loadMembers());
+		
+		content.addComponent(new Label("Activity:"));
+		content.addComponent(loadActivity());
+		
+		content.addComponent(loadButtons());
 	}
 	
 	void refreshContent()
@@ -45,6 +55,8 @@ public class BoardMenuWindow extends Window
 	VerticalLayout loadMembers()
 	{
 		VerticalLayout vl = new VerticalLayout();
+			vl.setSpacing(true);
+			vl.setMargin(true);
 		
 		GridLayout adminsGrid = new GridLayout();
 			adminsGrid.setColumns(5);
@@ -110,6 +122,7 @@ public class BoardMenuWindow extends Window
 								if(!board.getMembers().contains(u))
 								{
 									board.getMembers().add(u);
+									board.logActivity(User.getUserFromSession().getUsername()+" added member " + u.getUsername() + ".");
 									popup.close();
 									refreshContent();
 								} else
@@ -125,6 +138,56 @@ public class BoardMenuWindow extends Window
 		return vl;
 	}
 	
+	Panel loadActivity()
+	{
+		Panel p = new Panel();
+			p.setHeight(100f, Unit.MM);
+		
+		VerticalLayout layout = new VerticalLayout();
+			layout.setSpacing(true);
+			layout.setMargin(true);
+		p.setContent(layout);
+		
+		int n = board.getActivity().size();
+		for(int i=0;i<n;i++)
+			layout.addComponent(new Label(board.getActivity().get(i),ContentMode.HTML));
+		
+		p.setScrollTop(Integer.MAX_VALUE);
+		return p;
+	}
 	
-	
+	HorizontalLayout loadButtons()
+	{
+		HorizontalLayout hl = new HorizontalLayout();
+			hl.setMargin(true);
+			hl.setSpacing(true);
+			
+		Button subscribeButton;
+		if(board.getSubscribers().contains(User.getUserFromSession()))
+		{
+			subscribeButton = new Button("Unsubscribe");
+			subscribeButton.addClickListener((Button.ClickListener) clickEvent ->
+			{
+				board.getSubscribers().remove(User.getUserFromSession());
+				refreshContent();
+			});
+		} else
+		{
+			subscribeButton = new Button("Subscribe");
+			subscribeButton.addClickListener((Button.ClickListener) clickEvent ->
+			{
+				board.getSubscribers().add(User.getUserFromSession());
+				refreshContent();
+			});
+		}
+		hl.addComponent(subscribeButton);
+		
+		Button archivedItemsButton = new Button("Archived Items");
+		hl.addComponent(archivedItemsButton);
+		
+		Button shareButton = new Button("Share");
+		hl.addComponent(shareButton);
+
+		return hl;		
+	}
 }

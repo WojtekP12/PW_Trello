@@ -1,7 +1,7 @@
 package org.models;
 
 import java.util.ArrayList;
-
+import java.time.LocalDateTime;
 
 
 public class Board
@@ -17,6 +17,8 @@ public class Board
 	private ArrayList<User> members = new ArrayList<User>();
 	private ArrayList<User> subscribers = new ArrayList<User>();
 	private ArrayList<User> admins = new ArrayList<User>();
+	
+	public ArrayList<String> activity = new ArrayList<String>();
 	
 	private BoardPrivacy privacy;
 	private Team team;
@@ -140,6 +142,16 @@ public class Board
 	public void setTeam(Team t)
 	{
 		this.team = t;
+	}
+	
+	public ArrayList<String> getActivity()
+	{
+		return activity;
+	}
+	
+	public void logActivity(String log)
+	{
+		getActivity().add("<b>[ " + LocalDateTime.now().toString() + " ] </b>" + log);
 	}
 	
 	

@@ -29,6 +29,7 @@ public class ManageBoardMemberWindow extends Window
 			public void buttonClick(ClickEvent event)
 			{
 				board.getAdmins().add(user);
+				board.logActivity(User.getUserFromSession().getUsername()+" promoted member " + user.getUsername() + ".");
 				ManageBoardMemberWindow.this.close();
 				parent.refreshContent();
 			}
@@ -40,6 +41,7 @@ public class ManageBoardMemberWindow extends Window
 			public void buttonClick(ClickEvent event)
 			{
 				board.getMembers().remove(user);
+				board.logActivity(User.getUserFromSession().getUsername()+" removed member " + user.getUsername() + ".");
 				
 				if((board.getPrivacy() == Board.BoardPrivacy.PRIVATE) || (board.getPrivacy() == Board.BoardPrivacy.TEAM && board.getTeam().getMembers().contains(user)))
 				{
