@@ -436,6 +436,17 @@ public class MyUI extends UI {
 					UI.getCurrent().addWindow(pw);
 				}
 			});
+			
+		Button menuButton = new Button("Menu");
+		menuButton.addClickListener(new Button.ClickListener()
+			{
+				public void buttonClick(ClickEvent event)
+				{
+					BoardMenuWindow bmw = new BoardMenuWindow(board);
+					UI.getCurrent().addWindow(bmw);
+				}
+			});
+		layout.addComponent(menuButton);
 		
 		return layout;
 	}
