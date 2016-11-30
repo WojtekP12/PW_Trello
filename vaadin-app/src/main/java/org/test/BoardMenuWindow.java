@@ -183,6 +183,11 @@ public class BoardMenuWindow extends Window
 		hl.addComponent(subscribeButton);
 		
 		Button archivedItemsButton = new Button("Archived Items");
+		archivedItemsButton.addClickListener((Button.ClickListener) clickEvent ->
+		{
+			ArchivedItemsWindow aiw = new ArchivedItemsWindow(board);
+			UI.getCurrent().addWindow(aiw);
+		});
 		hl.addComponent(archivedItemsButton);
 		
 		Button shareButton = new Button("Share");
